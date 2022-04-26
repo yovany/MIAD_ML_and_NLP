@@ -642,7 +642,7 @@ def predice_precio(year,mileage,state,make,model):
     valores_modelo['Model_'+model]=1
     
     # Make prediction
-    prediccion = clf.predice_precio(valores_modelo)
+    prediccion = clf.predict(valores_modelo)
 
     return prediccion
 
