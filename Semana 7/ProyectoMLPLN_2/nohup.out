@@ -1,0 +1,382 @@
+ * Serving Flask app "api" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+148.243.29.24 - - [26/May/2022 08:11:26] "GET / HTTP/1.1" 200 -
+148.243.29.24 - - [26/May/2022 08:11:26] "GET /swaggerui/droid-sans.css HTTP/1.1" 200 -
+148.243.29.24 - - [26/May/2022 08:11:26] "GET /swaggerui/swagger-ui-standalone-preset.js HTTP/1.1" 200 -
+148.243.29.24 - - [26/May/2022 08:11:26] "GET /swaggerui/swagger-ui-bundle.js HTTP/1.1" 200 -
+148.243.29.24 - - [26/May/2022 08:11:27] "GET /swaggerui/swagger-ui.css HTTP/1.1" 200 -
+148.243.29.24 - - [26/May/2022 08:11:27] "GET /swagger.json HTTP/1.1" 200 -
+148.243.29.24 - - [26/May/2022 08:11:27] "GET /swaggerui/favicon-32x32.png HTTP/1.1" 200 -
+148.243.29.24 - - [26/May/2022 08:11:27] "GET /swaggerui/favicon-16x16.png HTTP/1.1" 200 -
+148.243.29.24 - - [26/May/2022 08:12:02] "GET /predict/?Plot=most%20is%20the%20story%20of%20a%20single%20father%20who%20takes%20his%20eight%20year%20-%20old%20son%20to%20work%20with%20him%20at%20the%20railroad%20drawbridge%20where%20he%20is%20the%20bridge%20tender%20.%20%20a%20day%20before%20%2C%20%20the%20boy%20meets%20a%20woman%20boarding%20a%20train%20%2C%20%20a%20drug%20abuser%20.%20%20at%20the%20bridge%20%2C%20%20the%20father%20goes%20into%20the%20engine%20room%20%2C%20%20and%20tells%20his%20son%20to%20stay%20at%20the%20edge%20of%20the%20nearby%20lake%20.%20%20a%20ship%20comes%20%2C%20%20and%20the%20bridge%20is%20lifted%20.%20%20though%20it%20is%20supposed%20to%20arrive%20an%20hour%20later%20%2C%20%20the%20train%20happens%20to%20arrive%20.%20%20the%20son%20sees%20this%20%2C%20%20and%20tries%20to%20warn%20his%20father%20%2C%20%20who%20is%20not%20able%20to%20see%20this%20.%20%20just%20as%20the%20oncoming%20train%20approaches%20%2C%20%20his%20son%20falls%20into%20the%20drawbridge%20gear%20works%20while%20attempting%20to%20lower%20the%20bridge%20%2C%20%20leaving%20the%20father%20with%20a%20horrific%20choice%20.%20%20the%20father%20then%20lowers%20the%20bridge%20%2C%20%20the%20gears%20crushing%20the%20boy%20.%20%20the%20people%20in%20the%20train%20are%20completely%20oblivious%20to%20the%20fact%20a%20boy%20died%20trying%20to%20save%20them%20%2C%20%20other%20than%20the%20drug%20addict%20woman%20%2C%20%20who%20happened%20to%20look%20out%20her%20train%20window%20.%20%20the%20movie%20ends%20%2C%20%20with%20the%20man%20wandering%20a%20new%20city%20%2C%20%20and%20meets%20the%20woman%20%2C%20%20no%20longer%20a%20drug%20addict%20%2C%20%20holding%20a%20small%20baby%20.%20%20other%20relevant%20narratives%20run%20in%20parallel%20%2C%20%20namely%20one%20of%20the%20female%20drug%20-%20addict%20%2C%20%20and%20they%20all%20meet%20at%20the%20climax%20of%20this%20tumultuous%20film%20. HTTP/1.1" 500 -
+ * Serving Flask app "api" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+Traceback (most recent call last):
+  File "api.py", line 103, in <module>
+    app.run(debug=True, use_reloader=False, host='0.0.0.0', port=8888)
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/flask/app.py", line 990, in run
+    run_simple(host, port, self, **options)
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/werkzeug/serving.py", line 1012, in run_simple
+    inner()
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/werkzeug/serving.py", line 965, in inner
+    fd=fd,
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/werkzeug/serving.py", line 808, in make_server
+    host, port, app, request_handler, passthrough_errors, ssl_context, fd=fd
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/werkzeug/serving.py", line 701, in __init__
+    HTTPServer.__init__(self, server_address, handler)
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/socketserver.py", line 452, in __init__
+    self.server_bind()
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/http/server.py", line 137, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/socketserver.py", line 466, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 98] Address already in use
+Traceback (most recent call last):
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 2309, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 2295, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask_restplus/api.py", line 584, in error_router
+    return original_handler(e)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1741, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/_compat.py", line 34, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask_restplus/api.py", line 584, in error_router
+    return original_handler(e)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/_compat.py", line 34, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask_restplus/api.py", line 325, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask_restplus/resource.py", line 44, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask_restplus/marshalling.py", line 243, in wrapper
+    resp = f(*args, **kwargs)
+  File "/home/ubuntu/ProyectoMLPLN_2/api.py", line 76, in get
+    generos=predice_GENEROS(args['Plot'])
+  File "/home/ubuntu/ProyectoMLPLN_2/predice_generos.py", line 17, in predice_GENEROS
+    clf = joblib.load(os.path.dirname(__file__) + '/modelo_predice_generos.pkl')
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/joblib/numpy_pickle.py", line 587, in load
+    obj = _unpickle(fobj, filename, mmap_mode)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/joblib/numpy_pickle.py", line 506, in _unpickle
+    obj = unpickler.load()
+  File "/home/ubuntu/anaconda3/lib/python3.7/pickle.py", line 1085, in load
+    dispatch[key[0]](self)
+  File "/home/ubuntu/anaconda3/lib/python3.7/pickle.py", line 1382, in load_stack_global
+    self.append(self.find_class(module, name))
+  File "/home/ubuntu/anaconda3/lib/python3.7/pickle.py", line 1423, in find_class
+    __import__(module, level=0)
+ModuleNotFoundError: No module named 'sklearn.ensemble._forest'
+148.243.29.24 - - [26/May/2022 08:13:28] "GET / HTTP/1.1" 200 -
+148.243.29.24 - - [26/May/2022 08:13:28] "GET /swagger.json HTTP/1.1" 200 -
+148.243.29.24 - - [26/May/2022 08:13:59] "GET /predict/?Plot=most%20is%20the%20story%20of%20a%20single%20father%20who%20takes%20his%20eight%20year%20-%20old%20son%20to%20work%20with%20him%20at%20the%20railroad%20drawbridge%20where%20he%20is%20the%20bridge%20tender%20.%20%20a%20day%20before%20%2C%20%20the%20boy%20meets%20a%20woman%20boarding%20a%20train%20%2C%20%20a%20drug%20abuser%20.%20%20at%20the%20bridge%20%2C%20%20the%20father%20goes%20into%20the%20engine%20room%20%2C%20%20and%20tells%20his%20son%20to%20stay%20at%20the%20edge%20of%20the%20nearby%20lake%20.%20%20a%20ship%20comes%20%2C%20%20and%20the%20bridge%20is%20lifted%20.%20%20though%20it%20is%20supposed%20to%20arrive%20an%20hour%20later%20%2C%20%20the%20train%20happens%20to%20arrive%20.%20%20the%20son%20sees%20this%20%2C%20%20and%20tries%20to%20warn%20his%20father%20%2C%20%20who%20is%20not%20able%20to%20see%20this%20.%20%20just%20as%20the%20oncoming%20train%20approaches%20%2C%20%20his%20son%20falls%20into%20the%20drawbridge%20gear%20works%20while%20attempting%20to%20lower%20the%20bridge%20%2C%20%20leaving%20the%20father%20with%20a%20horrific%20choice%20.%20%20the%20father%20then%20lowers%20the%20bridge%20%2C%20%20the%20gears%20crushing%20the%20boy%20.%20%20the%20people%20in%20the%20train%20are%20completely%20oblivious%20to%20the%20fact%20a%20boy%20died%20trying%20to%20save%20them%20%2C%20%20other%20than%20the%20drug%20addict%20woman%20%2C%20%20who%20happened%20to%20look%20out%20her%20train%20window%20.%20%20the%20movie%20ends%20%2C%20%20with%20the%20man%20wandering%20a%20new%20city%20%2C%20%20and%20meets%20the%20woman%20%2C%20%20no%20longer%20a%20drug%20addict%20%2C%20%20holding%20a%20small%20baby%20.%20%20other%20relevant%20narratives%20run%20in%20parallel%20%2C%20%20namely%20one%20of%20the%20female%20drug%20-%20addict%20%2C%20%20and%20they%20all%20meet%20at%20the%20climax%20of%20this%20tumultuous%20film%20. HTTP/1.1" 500 -
+ * Serving Flask app "api" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/sklearn/feature_extraction/image.py:167: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  dtype=np.int):
+Traceback (most recent call last):
+  File "api.py", line 103, in <module>
+    app.run(debug=True, use_reloader=False, host='0.0.0.0', port=8888)
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/flask/app.py", line 990, in run
+    run_simple(host, port, self, **options)
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/werkzeug/serving.py", line 1012, in run_simple
+    inner()
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/werkzeug/serving.py", line 965, in inner
+    fd=fd,
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/werkzeug/serving.py", line 808, in make_server
+    host, port, app, request_handler, passthrough_errors, ssl_context, fd=fd
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/werkzeug/serving.py", line 701, in __init__
+    HTTPServer.__init__(self, server_address, handler)
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/socketserver.py", line 452, in __init__
+    self.server_bind()
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/http/server.py", line 137, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/socketserver.py", line 466, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 98] Address already in use
+Traceback (most recent call last):
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 2309, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 2295, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask_restplus/api.py", line 584, in error_router
+    return original_handler(e)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1741, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/_compat.py", line 34, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask_restplus/api.py", line 584, in error_router
+    return original_handler(e)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/_compat.py", line 34, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask_restplus/api.py", line 325, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask_restplus/resource.py", line 44, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask_restplus/marshalling.py", line 243, in wrapper
+    resp = f(*args, **kwargs)
+  File "/home/ubuntu/ProyectoMLPLN_2/api.py", line 76, in get
+    generos=predice_GENEROS(args['Plot'])
+  File "/home/ubuntu/ProyectoMLPLN_2/predice_generos.py", line 17, in predice_GENEROS
+    clf = joblib.load(os.path.dirname(__file__) + '/modelo_predice_generos.pkl')
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/joblib/numpy_pickle.py", line 587, in load
+    obj = _unpickle(fobj, filename, mmap_mode)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/joblib/numpy_pickle.py", line 506, in _unpickle
+    obj = unpickler.load()
+  File "/home/ubuntu/anaconda3/lib/python3.7/pickle.py", line 1085, in load
+    dispatch[key[0]](self)
+  File "/home/ubuntu/anaconda3/lib/python3.7/pickle.py", line 1382, in load_stack_global
+    self.append(self.find_class(module, name))
+  File "/home/ubuntu/anaconda3/lib/python3.7/pickle.py", line 1423, in find_class
+    __import__(module, level=0)
+ModuleNotFoundError: No module named 'sklearn.ensemble._forest'
+148.243.29.24 - - [26/May/2022 08:21:02] "GET / HTTP/1.1" 200 -
+148.243.29.24 - - [26/May/2022 08:21:02] "GET /swagger.json HTTP/1.1" 200 -
+148.243.29.24 - - [26/May/2022 08:21:31] "GET /predict/?Plot=most%20is%20the%20story%20of%20a%20single%20father%20who%20takes%20his%20eight%20year%20-%20old%20son%20to%20work%20with%20him%20at%20the%20railroad%20drawbridge%20where%20he%20is%20the%20bridge%20tender%20.%20%20a%20day%20before%20%2C%20%20the%20boy%20meets%20a%20woman%20boarding%20a%20train%20%2C%20%20a%20drug%20abuser%20.%20%20at%20the%20bridge%20%2C%20%20the%20father%20goes%20into%20the%20engine%20room%20%2C%20%20and%20tells%20his%20son%20to%20stay%20at%20the%20edge%20of%20the%20nearby%20lake%20.%20%20a%20ship%20comes%20%2C%20%20and%20the%20bridge%20is%20lifted%20.%20%20though%20it%20is%20supposed%20to%20arrive%20an%20hour%20later%20%2C%20%20the%20train%20happens%20to%20arrive%20.%20%20the%20son%20sees%20this%20%2C%20%20and%20tries%20to%20warn%20his%20father%20%2C%20%20who%20is%20not%20able%20to%20see%20this%20.%20%20just%20as%20the%20oncoming%20train%20approaches%20%2C%20%20his%20son%20falls%20into%20the%20drawbridge%20gear%20works%20while%20attempting%20to%20lower%20the%20bridge%20%2C%20%20leaving%20the%20father%20with%20a%20horrific%20choice%20.%20%20the%20father%20then%20lowers%20the%20bridge%20%2C%20%20the%20gears%20crushing%20the%20boy%20.%20%20the%20people%20in%20the%20train%20are%20completely%20oblivious%20to%20the%20fact%20a%20boy%20died%20trying%20to%20save%20them%20%2C%20%20other%20than%20the%20drug%20addict%20woman%20%2C%20%20who%20happened%20to%20look%20out%20her%20train%20window%20.%20%20the%20movie%20ends%20%2C%20%20with%20the%20man%20wandering%20a%20new%20city%20%2C%20%20and%20meets%20the%20woman%20%2C%20%20no%20longer%20a%20drug%20addict%20%2C%20%20holding%20a%20small%20baby%20.%20%20other%20relevant%20narratives%20run%20in%20parallel%20%2C%20%20namely%20one%20of%20the%20female%20drug%20-%20addict%20%2C%20%20and%20they%20all%20meet%20at%20the%20climax%20of%20this%20tumultuous%20film%20. HTTP/1.1" 500 -
+ * Serving Flask app "api" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+Traceback (most recent call last):
+  File "api.py", line 103, in <module>
+    app.run(debug=True, use_reloader=False, host='0.0.0.0', port=8888)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 943, in run
+    run_simple(host, port, self, **options)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/werkzeug/serving.py", line 814, in run_simple
+    inner()
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/werkzeug/serving.py", line 774, in inner
+    fd=fd)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/werkzeug/serving.py", line 660, in make_server
+    passthrough_errors, ssl_context, fd=fd)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/werkzeug/serving.py", line 577, in __init__
+    self.address_family), handler)
+  File "/home/ubuntu/anaconda3/lib/python3.7/socketserver.py", line 449, in __init__
+    self.server_bind()
+  File "/home/ubuntu/anaconda3/lib/python3.7/http/server.py", line 137, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/home/ubuntu/anaconda3/lib/python3.7/socketserver.py", line 463, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 98] Address already in use
+Traceback (most recent call last):
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 2309, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 2295, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask_restplus/api.py", line 584, in error_router
+    return original_handler(e)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1741, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/_compat.py", line 34, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask_restplus/api.py", line 584, in error_router
+    return original_handler(e)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/_compat.py", line 34, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask_restplus/api.py", line 325, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask_restplus/resource.py", line 44, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask_restplus/marshalling.py", line 243, in wrapper
+    resp = f(*args, **kwargs)
+  File "/home/ubuntu/ProyectoMLPLN_2/api.py", line 76, in get
+    generos=predice_GENEROS(args['Plot'])
+  File "/home/ubuntu/ProyectoMLPLN_2/predice_generos.py", line 17, in predice_GENEROS
+    clf = joblib.load(os.path.dirname(__file__) + '/modelo_predice_generos.pkl')
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/joblib/numpy_pickle.py", line 587, in load
+    obj = _unpickle(fobj, filename, mmap_mode)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/joblib/numpy_pickle.py", line 506, in _unpickle
+    obj = unpickler.load()
+  File "/home/ubuntu/anaconda3/lib/python3.7/pickle.py", line 1085, in load
+    dispatch[key[0]](self)
+  File "/home/ubuntu/anaconda3/lib/python3.7/pickle.py", line 1382, in load_stack_global
+    self.append(self.find_class(module, name))
+  File "/home/ubuntu/anaconda3/lib/python3.7/pickle.py", line 1423, in find_class
+    __import__(module, level=0)
+ModuleNotFoundError: No module named 'sklearn.ensemble._forest'
+148.243.29.24 - - [26/May/2022 08:22:14] "GET / HTTP/1.1" 200 -
+148.243.29.24 - - [26/May/2022 08:22:14] "GET /swagger.json HTTP/1.1" 200 -
+148.243.29.24 - - [26/May/2022 08:22:22] "GET /predict/?Plot=most%20is%20the%20story%20of%20a%20single%20father%20who%20takes%20his%20eight%20year%20-%20old%20son%20to%20work%20with%20him%20at%20the%20railroad%20drawbridge%20where%20he%20is%20the%20bridge%20tender%20.%20%20a%20day%20before%20%2C%20%20the%20boy%20meets%20a%20woman%20boarding%20a%20train%20%2C%20%20a%20drug%20abuser%20.%20%20at%20the%20bridge%20%2C%20%20the%20father%20goes%20into%20the%20engine%20room%20%2C%20%20and%20tells%20his%20son%20to%20stay%20at%20the%20edge%20of%20the%20nearby%20lake%20.%20%20a%20ship%20comes%20%2C%20%20and%20the%20bridge%20is%20lifted%20.%20%20though%20it%20is%20supposed%20to%20arrive%20an%20hour%20later%20%2C%20%20the%20train%20happens%20to%20arrive%20.%20%20the%20son%20sees%20this%20%2C%20%20and%20tries%20to%20warn%20his%20father%20%2C%20%20who%20is%20not%20able%20to%20see%20this%20.%20%20just%20as%20the%20oncoming%20train%20approaches%20%2C%20%20his%20son%20falls%20into%20the%20drawbridge%20gear%20works%20while%20attempting%20to%20lower%20the%20bridge%20%2C%20%20leaving%20the%20father%20with%20a%20horrific%20choice%20.%20%20the%20father%20then%20lowers%20the%20bridge%20%2C%20%20the%20gears%20crushing%20the%20boy%20.%20%20the%20people%20in%20the%20train%20are%20completely%20oblivious%20to%20the%20fact%20a%20boy%20died%20trying%20to%20save%20them%20%2C%20%20other%20than%20the%20drug%20addict%20woman%20%2C%20%20who%20happened%20to%20look%20out%20her%20train%20window%20.%20%20the%20movie%20ends%20%2C%20%20with%20the%20man%20wandering%20a%20new%20city%20%2C%20%20and%20meets%20the%20woman%20%2C%20%20no%20longer%20a%20drug%20addict%20%2C%20%20holding%20a%20small%20baby%20.%20%20other%20relevant%20narratives%20run%20in%20parallel%20%2C%20%20namely%20one%20of%20the%20female%20drug%20-%20addict%20%2C%20%20and%20they%20all%20meet%20at%20the%20climax%20of%20this%20tumultuous%20film%20. HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 2309, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 2295, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask_restplus/api.py", line 584, in error_router
+    return original_handler(e)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1741, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/_compat.py", line 34, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask_restplus/api.py", line 584, in error_router
+    return original_handler(e)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/_compat.py", line 34, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask_restplus/api.py", line 325, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask_restplus/resource.py", line 44, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask_restplus/marshalling.py", line 243, in wrapper
+    resp = f(*args, **kwargs)
+  File "/home/ubuntu/ProyectoMLPLN_2/api.py", line 76, in get
+    generos=predice_GENEROS(args['Plot'])
+  File "/home/ubuntu/ProyectoMLPLN_2/predice_generos.py", line 17, in predice_GENEROS
+    clf = joblib.load(os.path.dirname(__file__) + '/modelo_predice_generos.pkl')
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/joblib/numpy_pickle.py", line 587, in load
+    obj = _unpickle(fobj, filename, mmap_mode)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/joblib/numpy_pickle.py", line 506, in _unpickle
+    obj = unpickler.load()
+  File "/home/ubuntu/anaconda3/lib/python3.7/pickle.py", line 1085, in load
+    dispatch[key[0]](self)
+  File "/home/ubuntu/anaconda3/lib/python3.7/pickle.py", line 1382, in load_stack_global
+    self.append(self.find_class(module, name))
+  File "/home/ubuntu/anaconda3/lib/python3.7/pickle.py", line 1423, in find_class
+    __import__(module, level=0)
+ModuleNotFoundError: No module named 'sklearn.ensemble._forest'
+167.248.133.46 - - [26/May/2022 10:31:17] code 400, message Bad request version ('À\x14À')
+167.248.133.46 - - [26/May/2022 10:31:17] " î  ê­?3<ö%{ÉKòÔ8´c9[ÂÜËÊ_ÇP¸ f9:ÏÖJ@CÃ½6¿ãÜ&~}Ðôç/û\¿;¸a &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ" HTTPStatus.BAD_REQUEST -
+167.248.133.46 - - [26/May/2022 10:31:18] "GET / HTTP/1.1" 200 -
+167.248.133.46 - - [26/May/2022 10:31:18] "GET / HTTP/1.1" 200 -
+167.248.133.46 - - [26/May/2022 10:31:18] code 505, message Invalid HTTP version (2.0)
+167.248.133.46 - - [26/May/2022 10:31:18] "PRI * HTTP/2.0" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
+200.68.173.224 - - [26/May/2022 13:09:56] "GET / HTTP/1.1" 200 -
+200.68.173.224 - - [26/May/2022 13:09:56] "GET /swaggerui/droid-sans.css HTTP/1.1" 200 -
+200.68.173.224 - - [26/May/2022 13:09:56] "GET /swaggerui/swagger-ui-bundle.js HTTP/1.1" 200 -
+200.68.173.224 - - [26/May/2022 13:09:56] "GET /swaggerui/swagger-ui-standalone-preset.js HTTP/1.1" 200 -
+200.68.173.224 - - [26/May/2022 13:09:56] "GET /swaggerui/swagger-ui.css HTTP/1.1" 200 -
+200.68.173.224 - - [26/May/2022 13:10:00] "GET /swagger.json HTTP/1.1" 200 -
+200.68.173.224 - - [26/May/2022 13:10:00] "GET /swaggerui/favicon-16x16.png HTTP/1.1" 200 -
+200.68.173.224 - - [26/May/2022 13:10:00] "GET /swaggerui/favicon-32x32.png HTTP/1.1" 200 -
+200.68.173.224 - - [26/May/2022 13:11:21] "GET /predict/?Plot=Jack%20Torrance%20se%20convierte%20en%20cuidador%20de%20invierno%20en%20el%20Hotel%20Overlook%2C%20en%20Colorado%2C%20con%20la%20esperanza%20de%20vencer%20su%20bloqueo%20con%20la%20escritura.%20Se%20instala%20all%C3%AD%20junto%20con%20su%20esposa%2C%20Wendy%2C%20y%20su%20hijo%2C%20Danny%2C%20que%20est%C3%A1%20plagado%20de%20premoniciones%20ps%C3%ADquicas.%20Mientras%20la%20escritura%20de%20Jack%20no%20fluye%20y%20las%20visiones%20de%20Danny%20se%20vuelven%20m%C3%A1s%20preocupantes%2C%20Jack%20descubre%20oscuros%20secretos%20del%20hotel%20y%20comienza%20a%20convertirse%20en%20un%20man%C3%ADaco%20homicida%2C%20empe%C3%B1ado%20en%20aterrorizar%20a%20su%20familia. HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 2309, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 2295, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask_restplus/api.py", line 584, in error_router
+    return original_handler(e)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1741, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/_compat.py", line 34, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask_restplus/api.py", line 584, in error_router
+    return original_handler(e)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/_compat.py", line 34, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask_restplus/api.py", line 325, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask_restplus/resource.py", line 44, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask_restplus/marshalling.py", line 243, in wrapper
+    resp = f(*args, **kwargs)
+  File "/home/ubuntu/ProyectoMLPLN_2/api.py", line 76, in get
+    generos=predice_GENEROS(args['Plot'])
+  File "/home/ubuntu/ProyectoMLPLN_2/predice_generos.py", line 17, in predice_GENEROS
+    clf = joblib.load(os.path.dirname(__file__) + '/modelo_predice_generos.pkl')
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/joblib/numpy_pickle.py", line 587, in load
+    obj = _unpickle(fobj, filename, mmap_mode)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/joblib/numpy_pickle.py", line 506, in _unpickle
+    obj = unpickler.load()
+  File "/home/ubuntu/anaconda3/lib/python3.7/pickle.py", line 1085, in load
+    dispatch[key[0]](self)
+  File "/home/ubuntu/anaconda3/lib/python3.7/pickle.py", line 1382, in load_stack_global
+    self.append(self.find_class(module, name))
+  File "/home/ubuntu/anaconda3/lib/python3.7/pickle.py", line 1423, in find_class
+    __import__(module, level=0)
+ModuleNotFoundError: No module named 'sklearn.ensemble._forest'
+200.68.159.82 - - [26/May/2022 13:25:01] "GET / HTTP/1.1" 200 -
+200.68.159.82 - - [26/May/2022 13:25:01] "GET /swagger.json HTTP/1.1" 200 -
+Traceback (most recent call last):
+  File "api.py", line 5, in <module>
+    import flask.scaffold
+ModuleNotFoundError: No module named 'flask.scaffold'
+Traceback (most recent call last):
+  File "api.py", line 5, in <module>
+    import flask.scaffold
+ModuleNotFoundError: No module named 'flask.scaffold'
+ * Serving Flask app 'api' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://172.31.27.252:8888/ (Press CTRL+C to quit)
+200.68.129.143 - - [27/May/2022 14:54:47] "GET / HTTP/1.1" 200 -
+200.68.129.143 - - [27/May/2022 14:54:48] "GET /swagger.json HTTP/1.1" 200 -
+200.68.129.143 - - [27/May/2022 14:55:40] "GET /predict/?Plot=most%20is%20the%20story%20of%20a%20single%20father%20who%20takes%20his%20eight%20year%20-%20old%20son%20to%20work%20with%20him%20at%20the%20railroad%20drawbridge%20where%20he%20is%20the%20bridge%20tender%20.%20%20a%20day%20before%20%2C%20%20the%20boy%20meets%20a%20woman%20boarding%20a%20train%20%2C%20%20a%20drug%20abuser%20.%20%20at%20the%20bridge%20%2C%20%20the%20father%20goes%20into%20the%20engine%20room%20%2C%20%20and%20tells%20his%20son%20to%20stay%20at%20the%20edge%20of%20the%20nearby%20lake%20.%20%20a%20ship%20comes%20%2C%20%20and%20the%20bridge%20is%20lifted%20.%20%20though%20it%20is%20supposed%20to%20arrive%20an%20hour%20later%20%2C%20%20the%20train%20happens%20to%20arrive%20.%20%20the%20son%20sees%20this%20%2C%20%20and%20tries%20to%20warn%20his%20father%20%2C%20%20who%20is%20not%20able%20to%20see%20this%20.%20%20just%20as%20the%20oncoming%20train%20approaches%20%2C%20%20his%20son%20falls%20into%20the%20drawbridge%20gear%20works%20while%20attempting%20to%20lower%20the%20bridge%20%2C%20%20leaving%20the%20father%20with%20a%20horrific%20choice%20.%20%20the%20father%20then%20lowers%20the%20bridge%20%2C%20%20the%20gears%20crushing%20the%20boy%20.%20%20the%20people%20in%20the%20train%20are%20completely%20oblivious%20to%20the%20fact%20a%20boy%20died%20trying%20to%20save%20them%20%2C%20%20other%20than%20the%20drug%20addict%20woman%20%2C%20%20who%20happened%20to%20look%20out%20her%20train%20window%20.%20%20the%20movie%20ends%20%2C%20%20with%20the%20man%20wandering%20a%20new%20city%20%2C%20%20and%20meets%20the%20woman%20%2C%20%20no%20longer%20a%20drug%20addict%20%2C%20%20holding%20a%20small%20baby%20.%20%20other%20relevant%20narratives%20run%20in%20parallel%20%2C%20%20namely%20one%20of%20the%20female%20drug%20-%20addict%20%2C%20%20and%20they%20all%20meet%20at%20the%20climax%20of%20this%20tumultuous%20film HTTP/1.1" 200 -
+52.87.174.59 - - [27/May/2022 14:56:20] "GET / HTTP/1.1" 200 -
+54.85.16.63 - - [27/May/2022 14:56:20] "GET /swaggerui/favicon-32x32.png HTTP/1.1" 200 -
+200.68.129.143 - - [27/May/2022 15:01:15] "GET / HTTP/1.1" 200 -
+200.68.129.143 - - [27/May/2022 15:01:15] "GET /swagger.json HTTP/1.1" 200 -
