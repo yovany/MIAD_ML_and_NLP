@@ -1,0 +1,876 @@
+ * Serving Flask app "api" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+200.68.159.109 - - [27/Apr/2022 18:39:33] "GET /predict/?Year=2017&Mileage=1998&State=FL&Make=Jeep&Model=Wrangler HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 2309, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 2295, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask_restplus/api.py", line 584, in error_router
+    return original_handler(e)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1741, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/_compat.py", line 34, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask_restplus/api.py", line 584, in error_router
+    return original_handler(e)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/_compat.py", line 34, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask_restplus/api.py", line 325, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask_restplus/resource.py", line 44, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask_restplus/marshalling.py", line 243, in wrapper
+    resp = f(*args, **kwargs)
+  File "/home/ubuntu/ProyectoMLPLN/api.py", line 71, in get
+    "result": predice_precio(args['Year'],args['Mileage'],args['State'],args['Make'],args['Model'])
+  File "/home/ubuntu/ProyectoMLPLN/predice_precio_model_deployment.py", line 8, in predice_precio
+    clf = joblib.load(os.path.dirname(__file__) + '/modelo_precio_autos_calibrado.pkl')
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/joblib/numpy_pickle.py", line 587, in load
+    obj = _unpickle(fobj, filename, mmap_mode)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/joblib/numpy_pickle.py", line 506, in _unpickle
+    obj = unpickler.load()
+  File "/home/ubuntu/anaconda3/lib/python3.7/pickle.py", line 1085, in load
+    dispatch[key[0]](self)
+  File "/home/ubuntu/anaconda3/lib/python3.7/pickle.py", line 1373, in load_global
+    klass = self.find_class(module, name)
+  File "/home/ubuntu/anaconda3/lib/python3.7/pickle.py", line 1423, in find_class
+    __import__(module, level=0)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/xgboost/__init__.py", line 9, in <module>
+    from .core import DMatrix, DeviceQuantileDMatrix, Booster
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/xgboost/core.py", line 174, in <module>
+    _LIB = _load_lib()
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/xgboost/core.py", line 165, in _load_lib
+    'Error message(s): {}\n'.format(os_error_list))
+xgboost.core.XGBoostError: XGBoost Library (libxgboost.so) could not be loaded.
+Likely causes:
+  * OpenMP runtime is not installed (vcomp140.dll or libgomp-1.dll for Windows, libomp.dylib for Mac OSX, libgomp.so for Linux and other UNIX-like OSes). Mac OSX users: Run `brew install libomp` to install OpenMP runtime.
+  * You are running 32-bit Python on a 64-bit OS
+Error message(s): ["/home/ubuntu/anaconda3/lib/python3.7/site-packages/matplotlib/../../../libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /home/ubuntu/anaconda3/lib/python3.7/site-packages/xgboost/lib/libxgboost.so)"]
+200.68.159.109 - - [27/Apr/2022 18:39:47] "GET /predict/?Year=2017&Mileage=1998&State=FL&Make=Jeep&Model=Wrangler HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 2309, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 2295, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask_restplus/api.py", line 584, in error_router
+    return original_handler(e)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1741, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/_compat.py", line 34, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask_restplus/api.py", line 584, in error_router
+    return original_handler(e)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/_compat.py", line 34, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask_restplus/api.py", line 325, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask/views.py", line 88, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask_restplus/resource.py", line 44, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/flask_restplus/marshalling.py", line 243, in wrapper
+    resp = f(*args, **kwargs)
+  File "/home/ubuntu/ProyectoMLPLN/api.py", line 71, in get
+    "result": predice_precio(args['Year'],args['Mileage'],args['State'],args['Make'],args['Model'])
+  File "/home/ubuntu/ProyectoMLPLN/predice_precio_model_deployment.py", line 8, in predice_precio
+    clf = joblib.load(os.path.dirname(__file__) + '/modelo_precio_autos_calibrado.pkl')
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/joblib/numpy_pickle.py", line 587, in load
+    obj = _unpickle(fobj, filename, mmap_mode)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/joblib/numpy_pickle.py", line 506, in _unpickle
+    obj = unpickler.load()
+  File "/home/ubuntu/anaconda3/lib/python3.7/pickle.py", line 1085, in load
+    dispatch[key[0]](self)
+  File "/home/ubuntu/anaconda3/lib/python3.7/pickle.py", line 1373, in load_global
+    klass = self.find_class(module, name)
+  File "/home/ubuntu/anaconda3/lib/python3.7/pickle.py", line 1423, in find_class
+    __import__(module, level=0)
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/xgboost/__init__.py", line 9, in <module>
+    from .core import DMatrix, DeviceQuantileDMatrix, Booster
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/xgboost/core.py", line 174, in <module>
+    _LIB = _load_lib()
+  File "/home/ubuntu/anaconda3/lib/python3.7/site-packages/xgboost/core.py", line 165, in _load_lib
+    'Error message(s): {}\n'.format(os_error_list))
+xgboost.core.XGBoostError: XGBoost Library (libxgboost.so) could not be loaded.
+Likely causes:
+  * OpenMP runtime is not installed (vcomp140.dll or libgomp-1.dll for Windows, libomp.dylib for Mac OSX, libgomp.so for Linux and other UNIX-like OSes). Mac OSX users: Run `brew install libomp` to install OpenMP runtime.
+  * You are running 32-bit Python on a 64-bit OS
+Error message(s): ["/home/ubuntu/anaconda3/lib/python3.7/site-packages/matplotlib/../../../libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /home/ubuntu/anaconda3/lib/python3.7/site-packages/xgboost/lib/libxgboost.so)"]
+200.68.159.109 - - [27/Apr/2022 18:39:52] "GET /predict/?Year=2017&Mileage=1998&State=FL&Make=Jeep&Model=Wrangler HTTP/1.1" 500 -
+Terminated
+ * Serving Flask app "api" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+200.68.159.109 - - [27/Apr/2022 19:27:17] "GET /predict/?Year=2017&Mileage=1998&State=FL&Make=Jeep&Model=Wrangler HTTP/1.1" 200 -
+18.206.145.19 - - [27/Apr/2022 19:27:54] "GET / HTTP/1.1" 200 -
+54.224.95.105 - - [27/Apr/2022 19:27:54] "GET /swaggerui/favicon-32x32.png HTTP/1.1" 200 -
+200.68.159.109 - - [27/Apr/2022 19:27:59] "GET / HTTP/1.1" 200 -
+200.68.159.109 - - [27/Apr/2022 19:28:00] "GET /swaggerui/droid-sans.css HTTP/1.1" 200 -
+200.68.159.109 - - [27/Apr/2022 19:28:00] "GET /swaggerui/swagger-ui-bundle.js HTTP/1.1" 200 -
+200.68.159.109 - - [27/Apr/2022 19:28:00] "GET /swaggerui/swagger-ui.css HTTP/1.1" 200 -
+200.68.159.109 - - [27/Apr/2022 19:28:00] "GET /swaggerui/swagger-ui-standalone-preset.js HTTP/1.1" 200 -
+200.68.159.109 - - [27/Apr/2022 19:28:01] "GET /swagger.json HTTP/1.1" 200 -
+186.233.184.37 - - [27/Apr/2022 19:28:04] "GET / HTTP/1.1" 200 -
+186.233.184.37 - - [27/Apr/2022 19:28:04] "GET /swaggerui/droid-sans.css HTTP/1.1" 200 -
+186.233.184.37 - - [27/Apr/2022 19:28:05] "GET /swaggerui/swagger-ui.css HTTP/1.1" 200 -
+186.233.184.37 - - [27/Apr/2022 19:28:05] "GET /swaggerui/swagger-ui-bundle.js HTTP/1.1" 200 -
+186.233.184.37 - - [27/Apr/2022 19:28:05] "GET /swaggerui/swagger-ui-standalone-preset.js HTTP/1.1" 200 -
+186.233.184.37 - - [27/Apr/2022 19:28:06] "GET /swagger.json HTTP/1.1" 200 -
+186.233.184.37 - - [27/Apr/2022 19:28:06] "GET /swaggerui/favicon-32x32.png HTTP/1.1" 200 -
+198.235.24.147 - - [27/Apr/2022 19:53:34] code 400, message Bad HTTP/0.9 request type ("\x16\x03\x01\x00Ê\x01\x00\x00Æ\x03\x03®;ÙBoú\x18J\x98\x01#äÂûsßJê2hDwi\x80jÛ\\ÔæC÷H\x00\x00hÌ\x14Ì\x13À/À+À0À,À\x11À\x07À'À#À\x13À")
+198.235.24.147 - - [27/Apr/2022 19:53:34] " Ê  Æ®;ÙBoúJ#äÂûsßJê2hDwijÛ\ÔæC÷H  hÌÌÀ/À+À0À,ÀÀÀ'À#ÀÀ	À(À$ÀÀ" HTTPStatus.BAD_REQUEST -
+198.235.24.13 - - [27/Apr/2022 20:04:33] "GET / HTTP/1.0" 200 -
+198.235.24.148 - - [28/Apr/2022 04:12:13] "GET / HTTP/1.1" 200 -
+198.199.119.206 - - [28/Apr/2022 07:20:21] "GET / HTTP/1.1" 200 -
+35.88.194.143 - - [28/Apr/2022 09:07:17] "GET http://azenv.net/ HTTP/1.1" 200 -
+185.20.226.243 - - [28/Apr/2022 09:47:01] "GET / HTTP/1.0" 200 -
+186.233.185.29 - - [28/Apr/2022 11:09:43] "GET / HTTP/1.1" 200 -
+186.233.185.29 - - [28/Apr/2022 11:09:44] "GET /swaggerui/droid-sans.css HTTP/1.1" 200 -
+186.233.185.29 - - [28/Apr/2022 11:09:44] "GET /swaggerui/swagger-ui.css HTTP/1.1" 200 -
+186.233.185.29 - - [28/Apr/2022 11:09:44] "GET /swaggerui/swagger-ui-bundle.js HTTP/1.1" 200 -
+186.233.185.29 - - [28/Apr/2022 11:09:44] "GET /swaggerui/swagger-ui-standalone-preset.js HTTP/1.1" 200 -
+186.233.185.29 - - [28/Apr/2022 11:09:45] "GET /swagger.json HTTP/1.1" 200 -
+186.233.185.29 - - [28/Apr/2022 11:12:21] "GET /predict/?Year=2012&Mileage=83716&State=TX&Make=BMW&Model=X5AWD HTTP/1.1" 200 -
+186.233.185.29 - - [28/Apr/2022 11:14:21] "GET /predict/?Year=2013&Mileage=64032&State=64032&Make=Jeep&Model=Wrangler HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/flask/app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/flask/app.py", line 2450, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/flask_restplus/api.py", line 584, in error_router
+    return original_handler(e)
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/flask/app.py", line 1867, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/flask/_compat.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/flask_restplus/api.py", line 584, in error_router
+    return original_handler(e)
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/flask/_compat.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/flask_restplus/api.py", line 325, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/flask_restplus/resource.py", line 44, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/flask_restplus/marshalling.py", line 243, in wrapper
+    resp = f(*args, **kwargs)
+  File "/home/ubuntu/ProyectoMLPLN/api.py", line 71, in get
+    "result": predice_precio(args['Year'],args['Mileage'],args['State'],args['Make'],args['Model'])
+  File "/home/ubuntu/ProyectoMLPLN/predice_precio_model_deployment.py", line 645, in predice_precio
+    prediccion = clf.predict(valores_modelo)
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/xgboost/sklearn.py", line 654, in predict
+    validate_features=validate_features)
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/xgboost/core.py", line 1494, in predict
+    ctypes.byref(preds)))
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/xgboost/core.py", line 189, in _check_call
+    raise XGBoostError(py_str(_LIB.XGBGetLastError()))
+xgboost.core.XGBoostError: [11:14:21] ../src/learner.cc:1183: Check failed: learner_model_param_.num_feature >= p_fmat->Info().num_col_ (617 vs. 618) : Number of columns does not match number of features in booster.
+Stack trace:
+  [bt] (0) /home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/xgboost/lib/libxgboost.so(+0x8d264) [0x7fe89e014264]
+  [bt] (1) /home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/xgboost/lib/libxgboost.so(+0x19c57a) [0x7fe89e12357a]
+  [bt] (2) /home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/xgboost/lib/libxgboost.so(+0x1a2639) [0x7fe89e129639]
+  [bt] (3) /home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/xgboost/lib/libxgboost.so(XGBoosterPredict+0xd5) [0x7fe89e007b55]
+  [bt] (4) /home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/lib-dynload/../../libffi.so.7(+0x69dd) [0x7fe8d2f4c9dd]
+  [bt] (5) /home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/lib-dynload/../../libffi.so.7(+0x6067) [0x7fe8d2f4c067]
+  [bt] (6) /home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/lib-dynload/_ctypes.cpython-37m-x86_64-linux-gnu.so(_ctypes_callproc+0x2e7) [0x7fe8cee1c437]
+  [bt] (7) /home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/lib-dynload/_ctypes.cpython-37m-x86_64-linux-gnu.so(+0x12ea4) [0x7fe8cee1cea4]
+  [bt] (8) python(_PyObject_FastCallKeywords+0x15c) [0x56334426b16c]
+186.233.185.29 - - [28/Apr/2022 11:14:51] "GET /predict/?Year=2013&Mileage=64032&State=CO&Make=Jeep&Model=Wrangler HTTP/1.1" 200 -
+94.102.61.20 - - [28/Apr/2022 16:37:15] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00\x89\x01\x00\x00')
+94.102.61.20 - - [28/Apr/2022 16:37:15] "   ºØV½s/" HTTPStatus.BAD_REQUEST -
+183.136.225.42 - - [28/Apr/2022 19:16:50] "GET / HTTP/1.1" 200 -
+183.136.225.42 - - [28/Apr/2022 19:16:50] "GET /swaggerui/favicon-32x32.png HTTP/1.1" 200 -
+167.94.138.120 - - [28/Apr/2022 20:20:43] code 400, message Bad request version ('À\x14À')
+167.94.138.120 - - [28/Apr/2022 20:20:43] " î  ê÷*ßÔ²ûÈ8öä¬ÔÙnMT Å¿0=»ÀxÇQÖO©«ceV4±<ÌÝø! &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ" HTTPStatus.BAD_REQUEST -
+167.94.138.120 - - [28/Apr/2022 20:20:44] "GET / HTTP/1.1" 200 -
+167.94.138.120 - - [28/Apr/2022 20:20:44] "GET / HTTP/1.1" 200 -
+167.94.138.120 - - [28/Apr/2022 20:20:44] code 505, message Invalid HTTP version (2.0)
+167.94.138.120 - - [28/Apr/2022 20:20:44] "PRI * HTTP/2.0" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
+198.235.24.155 - - [28/Apr/2022 21:13:36] "GET / HTTP/1.1" 200 -
+192.241.221.53 - - [28/Apr/2022 21:56:36] code 400, message Bad request syntax ('MGLNDD_18.189.21.2_8888')
+192.241.221.53 - - [28/Apr/2022 21:56:36] "MGLNDD_18.189.21.2_8888" HTTPStatus.BAD_REQUEST -
+205.210.31.17 - - [28/Apr/2022 22:25:13] code 400, message Bad request version ('À(À$À\x14À')
+205.210.31.17 - - [28/Apr/2022 22:25:13] " Ê  ÆnV«ý²Ò7§o¹#u²ú[÷¹r>óö  hÌÌÀ/À+À0À,ÀÀÀ'À#ÀÀ	À(À$ÀÀ" HTTPStatus.BAD_REQUEST -
+200.56.74.253 - - [28/Apr/2022 23:17:50] "GET / HTTP/1.1" 200 -
+200.56.74.253 - - [28/Apr/2022 23:17:50] "GET /swaggerui/droid-sans.css HTTP/1.1" 200 -
+200.56.74.253 - - [28/Apr/2022 23:17:50] "GET /swaggerui/swagger-ui.css HTTP/1.1" 200 -
+200.56.74.253 - - [28/Apr/2022 23:17:50] "GET /swaggerui/swagger-ui-standalone-preset.js HTTP/1.1" 304 -
+200.56.74.253 - - [28/Apr/2022 23:17:50] "GET /swaggerui/swagger-ui-bundle.js HTTP/1.1" 304 -
+200.56.74.253 - - [28/Apr/2022 23:17:51] "GET /swagger.json HTTP/1.1" 200 -
+170.130.187.30 - - [28/Apr/2022 23:33:21] "GET / HTTP/1.1" 200 -
+205.210.31.26 - - [29/Apr/2022 00:08:38] code 400, message Bad request version ('À(À$À\x14À')
+205.210.31.26 - - [29/Apr/2022 00:08:38] " Ê  Æëp²5-§þ©I­p/SNÀ3¿JRÚQ}§ö(Ä  hÌÌÀ/À+À0À,ÀÀÀ'À#ÀÀ	À(À$ÀÀ" HTTPStatus.BAD_REQUEST -
+103.203.58.5 - - [29/Apr/2022 00:44:43] "GET / HTTP/1.1" 200 -
+162.142.125.212 - - [29/Apr/2022 01:04:02] code 400, message Bad request syntax ("\x16\x03\x01\x00î\x01\x00\x00ê\x03\x03Në¹Â=)â~³óÛ'©\x81úÆ:ìÎQI-Æ")
+162.142.125.212 - - [29/Apr/2022 01:04:02] " î  êNë¹Â=)â~³óÛ'©úÆ:ìÎQI-Æ" HTTPStatus.BAD_REQUEST -
+162.142.125.212 - - [29/Apr/2022 01:04:03] "GET / HTTP/1.1" 200 -
+162.142.125.212 - - [29/Apr/2022 01:04:03] "GET / HTTP/1.1" 200 -
+162.142.125.212 - - [29/Apr/2022 01:04:03] code 505, message Invalid HTTP version (2.0)
+162.142.125.212 - - [29/Apr/2022 01:04:03] "PRI * HTTP/2.0" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
+198.235.24.144 - - [29/Apr/2022 02:46:04] "GET / HTTP/1.0" 200 -
+2.57.121.86 - - [29/Apr/2022 04:27:26] code 400, message Bad request version ("¯nãY»bhlÿ(=':©\x82ÙoÈ¢×\x93\x98´ï\x80å¹\x90\x00(À")
+2.57.121.86 - - [29/Apr/2022 04:27:26] "o kRHÅ#÷:Nßâ´/ÿ	T§Äy°hÆ¤="á ´,¯nãY»bhlÿ(=':©ÙoÈ¢×´ïå¹ (À" HTTPStatus.BAD_REQUEST -
+35.88.194.143 - - [29/Apr/2022 07:51:52] "GET http://azenv.net/ HTTP/1.1" 200 -
+194.31.98.37 - - [29/Apr/2022 08:12:08] "CONNECT google.com:443 HTTP/1.1" 404 -
+167.94.146.60 - - [29/Apr/2022 09:25:24] code 400, message Bad request version ('À\x14À')
+167.94.146.60 - - [29/Apr/2022 09:25:24] " î  ê¾·ZL%MEÃ´UJ:yÑæNý) £Þ1Þ4¢ð ]sÁóaUzJM©uôùP«É± º¯ÿK´¥ü° &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ" HTTPStatus.BAD_REQUEST -
+167.94.146.60 - - [29/Apr/2022 09:25:26] "GET / HTTP/1.1" 200 -
+167.94.146.60 - - [29/Apr/2022 09:25:26] "GET / HTTP/1.1" 200 -
+167.94.146.60 - - [29/Apr/2022 09:25:26] code 505, message Invalid HTTP version (2.0)
+167.94.146.60 - - [29/Apr/2022 09:25:26] "PRI * HTTP/2.0" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
+192.241.222.47 - - [29/Apr/2022 18:20:37] "GET / HTTP/1.1" 200 -
+198.235.24.29 - - [29/Apr/2022 19:08:28] "GET / HTTP/1.0" 200 -
+162.142.125.210 - - [29/Apr/2022 20:25:19] code 400, message Bad request version ('À\x14À')
+162.142.125.210 - - [29/Apr/2022 20:25:19] " î  ê·à(¯µ#ñ³eágÎGvë4½~$¡{®C7¤ ù51«Û°~Ë#é._ÔÉØ.<Ü:í/k%EÂ &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ" HTTPStatus.BAD_REQUEST -
+162.142.125.210 - - [29/Apr/2022 20:25:20] "GET / HTTP/1.1" 200 -
+162.142.125.210 - - [29/Apr/2022 20:25:20] "GET / HTTP/1.1" 200 -
+162.142.125.210 - - [29/Apr/2022 20:25:20] code 505, message Invalid HTTP version (2.0)
+162.142.125.210 - - [29/Apr/2022 20:25:20] "PRI * HTTP/2.0" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
+205.210.31.139 - - [29/Apr/2022 22:31:59] "GET / HTTP/1.1" 200 -
+205.210.31.28 - - [30/Apr/2022 01:19:12] code 400, message Bad HTTP/0.9 request type ("\x16\x03\x01\x00Ê\x01\x00\x00Æ\x03\x03\x0f<\x1a<?hÕ(7Çvè=\x89\x8a«âö\x0f\x84à\x8aî\x15N/Oj\x104µÒ\x00\x00hÌ\x14Ì\x13À/À+À0À,À\x11À\x07À'À#À\x13À")
+205.210.31.28 - - [30/Apr/2022 01:19:12] " Ê  Æ<<?hÕ(7Çvè=«âöàîN/Oj4µÒ  hÌÌÀ/À+À0À,ÀÀÀ'À#ÀÀ	À(À$ÀÀ" HTTPStatus.BAD_REQUEST -
+45.83.67.245 - - [30/Apr/2022 03:08:22] "GET / HTTP/1.1" 200 -
+45.83.65.147 - - [30/Apr/2022 03:08:22] "GET /swaggerui/favicon-32x32.png HTTP/1.1" 200 -
+35.80.9.252 - - [30/Apr/2022 04:25:48] "GET / HTTP/1.1" 200 -
+192.241.221.130 - - [30/Apr/2022 04:50:00] code 400, message Bad request syntax ('MGLNDD_18.189.21.2_8888')
+192.241.221.130 - - [30/Apr/2022 04:50:00] "MGLNDD_18.189.21.2_8888" HTTPStatus.BAD_REQUEST -
+167.248.133.60 - - [30/Apr/2022 06:07:47] code 400, message Bad request version ('À\x14À')
+167.248.133.60 - - [30/Apr/2022 06:07:47] " î  ê[yì£øOãsâÉ0ÅgP/tè7uÍêïu ¼­ é ­	½TÛBÎKpâ¦ÁÑð× &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ" HTTPStatus.BAD_REQUEST -
+167.248.133.60 - - [30/Apr/2022 06:07:48] "GET / HTTP/1.1" 200 -
+167.248.133.60 - - [30/Apr/2022 06:07:48] "GET / HTTP/1.1" 200 -
+167.248.133.60 - - [30/Apr/2022 06:07:48] code 505, message Invalid HTTP version (2.0)
+167.248.133.60 - - [30/Apr/2022 06:07:48] "PRI * HTTP/2.0" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
+200.56.74.253 - - [30/Apr/2022 07:36:21] "GET / HTTP/1.1" 200 -
+200.56.74.253 - - [30/Apr/2022 07:36:21] "GET /swaggerui/droid-sans.css HTTP/1.1" 200 -
+200.56.74.253 - - [30/Apr/2022 07:36:21] "GET /swaggerui/swagger-ui.css HTTP/1.1" 200 -
+200.56.74.253 - - [30/Apr/2022 07:36:21] "GET /swaggerui/swagger-ui-bundle.js HTTP/1.1" 200 -
+200.56.74.253 - - [30/Apr/2022 07:36:21] "GET /swaggerui/swagger-ui-standalone-preset.js HTTP/1.1" 200 -
+200.56.74.253 - - [30/Apr/2022 07:36:21] "GET /swagger.json HTTP/1.1" 200 -
+200.56.74.253 - - [30/Apr/2022 07:36:21] "GET /swaggerui/favicon-32x32.png HTTP/1.1" 200 -
+154.198.211.138 - - [30/Apr/2022 09:49:32] code 400, message Bad request version ('À\x14À')
+154.198.211.138 - - [30/Apr/2022 09:49:32] " ®  ªô]0çYy­ Þ³'Â«³Ûõæº¿ÐUÊbí  À/À+ÀÀÀÀ	ÀÀ" HTTPStatus.BAD_REQUEST -
+154.198.211.138 - - [30/Apr/2022 09:49:45] "GET / HTTP/1.1" 200 -
+154.198.211.138 - - [30/Apr/2022 09:49:50] "GET /swaggerui/favicon-16x16.png HTTP/1.1" 200 -
+154.198.211.138 - - [30/Apr/2022 09:49:56] "GET /robots.txt HTTP/1.1" 404 -
+154.198.211.138 - - [30/Apr/2022 09:50:00] "GET /sitemap.xml HTTP/1.1" 404 -
+162.142.125.212 - - [30/Apr/2022 11:11:47] code 400, message Bad request version ('À\x14À')
+162.142.125.212 - - [30/Apr/2022 11:11:47] " î  êäºA: <àðJ+WqO¸j=ÍçÁåýAÁ$4 ô!ý|.ÄÙ¬+Ý¸®´o0¸ú}¨Ç]èü0; &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ" HTTPStatus.BAD_REQUEST -
+162.142.125.212 - - [30/Apr/2022 11:11:48] "GET / HTTP/1.1" 200 -
+162.142.125.212 - - [30/Apr/2022 11:11:48] "GET / HTTP/1.1" 200 -
+162.142.125.212 - - [30/Apr/2022 11:11:48] code 505, message Invalid HTTP version (2.0)
+162.142.125.212 - - [30/Apr/2022 11:11:48] "PRI * HTTP/2.0" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
+185.173.35.1 - - [30/Apr/2022 11:27:35] "GET / HTTP/1.0" 200 -
+205.210.31.161 - - [30/Apr/2022 18:11:24] code 400, message Bad request version ('À(À$À\x14À')
+205.210.31.161 - - [30/Apr/2022 18:11:24] " Ê  Æou!ÀÎ§Ù(üN´MÔ³;|M~1 ªm¹E  hÌÌÀ/À+À0À,ÀÀÀ'À#ÀÀ	À(À$ÀÀ" HTTPStatus.BAD_REQUEST -
+192.241.214.40 - - [30/Apr/2022 18:21:34] "GET / HTTP/1.1" 200 -
+205.210.31.3 - - [30/Apr/2022 20:21:02] "GET / HTTP/1.1" 200 -
+162.142.125.7 - - [01/May/2022 00:02:40] code 400, message Bad request version ('À\x14À')
+162.142.125.7 - - [01/May/2022 00:02:40] " î  êwïP+íö57#ë£0S¬ÖÁ¤.Ý}/rWzÄw ÐVsð¦øí¡C}-WZ¦7þs(Öç[ ×ÁÝ2] &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ" HTTPStatus.BAD_REQUEST -
+162.142.125.7 - - [01/May/2022 00:02:42] "GET / HTTP/1.1" 200 -
+162.142.125.7 - - [01/May/2022 00:02:42] "GET / HTTP/1.1" 200 -
+162.142.125.7 - - [01/May/2022 00:02:42] code 505, message Invalid HTTP version (2.0)
+162.142.125.7 - - [01/May/2022 00:02:42] "PRI * HTTP/2.0" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
+185.170.8.247 - - [01/May/2022 00:16:44] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+185.170.8.247 - - [01/May/2022 00:16:44] "  /*à     Cookie: mstshash=Administr" HTTPStatus.BAD_REQUEST -
+198.235.24.33 - - [01/May/2022 01:42:32] "GET / HTTP/1.0" 200 -
+200.56.74.253 - - [01/May/2022 01:54:13] "GET /swagger.json HTTP/1.1" 200 -
+200.56.74.253 - - [01/May/2022 01:54:14] "GET /swaggerui/favicon-32x32.png HTTP/1.1" 200 -
+200.56.74.253 - - [01/May/2022 01:54:14] "GET /swaggerui/favicon-16x16.png HTTP/1.1" 200 -
+89.248.165.120 - - [01/May/2022 03:46:59] code 400, message Bad request syntax ('\x03\x00\x00\x13\x0eà\x00\x00\x00\x00\x00\x01\x00\x08\x00\x02\x00\x00\x00')
+89.248.165.120 - - [01/May/2022 03:46:59] "  à          " HTTPStatus.BAD_REQUEST -
+183.136.225.9 - - [01/May/2022 04:18:07] code 400, message Bad request syntax ('4')
+183.136.225.9 - - [01/May/2022 04:18:07] "4" HTTPStatus.BAD_REQUEST -
+192.241.215.233 - - [01/May/2022 04:52:09] code 400, message Bad request syntax ('MGLNDD_18.189.21.2_8888')
+192.241.215.233 - - [01/May/2022 04:52:09] "MGLNDD_18.189.21.2_8888" HTTPStatus.BAD_REQUEST -
+200.56.74.253 - - [01/May/2022 05:44:49] "GET /swagger.json HTTP/1.1" 200 -
+93.174.95.106 - - [01/May/2022 06:46:24] "GET / HTTP/1.1" 200 -
+93.174.95.106 - - [01/May/2022 06:46:24] "GET /swaggerui/favicon-32x32.png HTTP/1.1" 200 -
+35.233.62.116 - - [01/May/2022 06:46:30] "GET / HTTP/1.1" 200 -
+93.174.95.106 - - [01/May/2022 06:46:31] code 400, message Bad request syntax ('\x03À,nb\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00')
+93.174.95.106 - - [01/May/2022 06:46:31] "À,nb                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            " HTTPStatus.BAD_REQUEST -
+167.248.133.44 - - [01/May/2022 14:36:18] code 400, message Bad request version ('À\x14À')
+167.248.133.44 - - [01/May/2022 14:36:18] " î  êv|4ØÞ\Hù³xþ5;©Ç<}ýlhÿ&¯= Ç£âä^¨'`EÀKî¤á×pWb%`±: &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ" HTTPStatus.BAD_REQUEST -
+167.248.133.44 - - [01/May/2022 14:36:19] "GET / HTTP/1.1" 200 -
+167.248.133.44 - - [01/May/2022 14:36:19] "GET / HTTP/1.1" 200 -
+167.248.133.44 - - [01/May/2022 14:36:19] code 505, message Invalid HTTP version (2.0)
+167.248.133.44 - - [01/May/2022 14:36:19] "PRI * HTTP/2.0" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
+198.235.24.142 - - [01/May/2022 19:20:25] "GET / HTTP/1.1" 200 -
+200.56.74.253 - - [01/May/2022 20:15:05] "GET / HTTP/1.1" 200 -
+200.56.74.253 - - [01/May/2022 20:15:05] "GET /swaggerui/droid-sans.css HTTP/1.1" 304 -
+200.56.74.253 - - [01/May/2022 20:15:05] "GET /swaggerui/swagger-ui-standalone-preset.js HTTP/1.1" 304 -
+200.56.74.253 - - [01/May/2022 20:15:05] "GET /swaggerui/swagger-ui-bundle.js HTTP/1.1" 304 -
+200.56.74.253 - - [01/May/2022 20:15:05] "GET /swaggerui/swagger-ui.css HTTP/1.1" 304 -
+200.56.74.253 - - [01/May/2022 20:15:05] "GET /swagger.json HTTP/1.1" 200 -
+ * Serving Flask app "api" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+200.56.74.253 - - [01/May/2022 20:26:44] "GET / HTTP/1.1" 200 -
+200.56.74.253 - - [01/May/2022 20:26:44] "GET /swagger.json HTTP/1.1" 200 -
+200.56.74.253 - - [01/May/2022 20:27:26] "GET /predict/?Year=2012&Mileage=83716&State=TX&Make=BMW&Model=X5AWD HTTP/1.1" 500 -
+ * Serving Flask app "api" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+Traceback (most recent call last):
+  File "api.py", line 74, in <module>
+    app.run(debug=True, use_reloader=False, host='0.0.0.0', port=8888)
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/flask/app.py", line 990, in run
+    run_simple(host, port, self, **options)
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/werkzeug/serving.py", line 1012, in run_simple
+    inner()
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/werkzeug/serving.py", line 965, in inner
+    fd=fd,
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/werkzeug/serving.py", line 808, in make_server
+    host, port, app, request_handler, passthrough_errors, ssl_context, fd=fd
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/werkzeug/serving.py", line 701, in __init__
+    HTTPServer.__init__(self, server_address, handler)
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/socketserver.py", line 452, in __init__
+    self.server_bind()
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/http/server.py", line 137, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/socketserver.py", line 466, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 98] Address already in use
+ * Serving Flask app "api" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+Traceback (most recent call last):
+  File "api.py", line 74, in <module>
+    app.run(debug=True, use_reloader=False, host='0.0.0.0', port=8888)
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/flask/app.py", line 990, in run
+    run_simple(host, port, self, **options)
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/werkzeug/serving.py", line 1012, in run_simple
+    inner()
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/werkzeug/serving.py", line 965, in inner
+    fd=fd,
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/werkzeug/serving.py", line 808, in make_server
+    host, port, app, request_handler, passthrough_errors, ssl_context, fd=fd
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/werkzeug/serving.py", line 701, in __init__
+    HTTPServer.__init__(self, server_address, handler)
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/socketserver.py", line 452, in __init__
+    self.server_bind()
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/http/server.py", line 137, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/socketserver.py", line 466, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 98] Address already in use
+ * Serving Flask app "api" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+Traceback (most recent call last):
+  File "api.py", line 74, in <module>
+    app.run(debug=True, use_reloader=False, host='0.0.0.0', port=8888)
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/flask/app.py", line 990, in run
+    run_simple(host, port, self, **options)
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/werkzeug/serving.py", line 1012, in run_simple
+    inner()
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/werkzeug/serving.py", line 965, in inner
+    fd=fd,
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/werkzeug/serving.py", line 808, in make_server
+    host, port, app, request_handler, passthrough_errors, ssl_context, fd=fd
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/werkzeug/serving.py", line 701, in __init__
+    HTTPServer.__init__(self, server_address, handler)
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/socketserver.py", line 452, in __init__
+    self.server_bind()
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/http/server.py", line 137, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/socketserver.py", line 466, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 98] Address already in use
+ * Serving Flask app "api" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+Traceback (most recent call last):
+  File "api.py", line 74, in <module>
+    app.run(debug=True, use_reloader=False, host='0.0.0.0', port=8888)
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/flask/app.py", line 990, in run
+    run_simple(host, port, self, **options)
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/werkzeug/serving.py", line 1012, in run_simple
+    inner()
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/werkzeug/serving.py", line 965, in inner
+    fd=fd,
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/werkzeug/serving.py", line 808, in make_server
+    host, port, app, request_handler, passthrough_errors, ssl_context, fd=fd
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/site-packages/werkzeug/serving.py", line 701, in __init__
+    HTTPServer.__init__(self, server_address, handler)
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/socketserver.py", line 452, in __init__
+    self.server_bind()
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/http/server.py", line 137, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/home/ubuntu/anaconda3/envs/env_py_3.7/lib/python3.7/socketserver.py", line 466, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 98] Address already in use
+ * Serving Flask app "api" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:8888/ (Press CTRL+C to quit)
+200.56.74.253 - - [01/May/2022 20:32:54] "GET / HTTP/1.1" 200 -
+200.56.74.253 - - [01/May/2022 20:32:54] "GET /swagger.json HTTP/1.1" 200 -
+200.56.74.253 - - [01/May/2022 20:33:27] "GET /predict/?Year=2012&Mileage=83716&State=TX&Make=BMW&Model=X5AWD HTTP/1.1" 200 -
+200.56.74.253 - - [01/May/2022 20:34:46] "GET /predict/?Year=2013&Mileage=64032&State=CO&Make=Jeep&Model=Wrangler HTTP/1.1" 200 -
+157.245.56.48 - - [02/May/2022 00:36:42] "GET / HTTP/1.1" 200 -
+192.241.213.240 - - [02/May/2022 01:12:11] "GET / HTTP/1.1" 200 -
+162.142.125.222 - - [02/May/2022 04:16:17] code 400, message Bad request version ('À\x14À')
+162.142.125.222 - - [02/May/2022 04:16:17] " î  êãý4zá$6cì#².ÖdàPÎÆE³¬Ýü wF±¾ëlvª¸ò§çO ãóôõªL$÷K]ÇÖ6øp &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ" HTTPStatus.BAD_REQUEST -
+162.142.125.222 - - [02/May/2022 04:16:18] "GET / HTTP/1.1" 200 -
+162.142.125.222 - - [02/May/2022 04:16:18] "GET / HTTP/1.1" 200 -
+162.142.125.222 - - [02/May/2022 04:16:19] code 505, message Invalid HTTP version (2.0)
+162.142.125.222 - - [02/May/2022 04:16:19] "PRI * HTTP/2.0" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
+198.235.24.149 - - [02/May/2022 04:57:51] "GET / HTTP/1.0" 200 -
+198.235.24.9 - - [02/May/2022 05:53:54] code 400, message Bad request version ('À(À$À\x14À')
+198.235.24.9 - - [02/May/2022 05:53:54] " Ê  Æ`5B¥n>¯6´	aôâloLwú¦e"a  hÌÌÀ/À+À0À,ÀÀÀ'À#ÀÀ	À(À$ÀÀ" HTTPStatus.BAD_REQUEST -
+172.104.159.48 - - [02/May/2022 10:56:19] "GET / HTTP/1.0" 200 -
+172.104.159.48 - - [02/May/2022 10:56:20] "GET / HTTP/1.1" 200 -
+172.104.159.48 - - [02/May/2022 10:56:20] "GET /admin.shtml HTTP/1.1" 404 -
+172.104.159.48 - - [02/May/2022 10:56:20] "GET /CSS/Miniweb.css HTTP/1.1" 404 -
+172.104.159.48 - - [02/May/2022 10:56:20] "GET /nmaplowercheck1651488980 HTTP/1.1" 404 -
+172.104.159.48 - - [02/May/2022 10:56:20] "GET /.git/HEAD HTTP/1.1" 404 -
+172.104.159.48 - - [02/May/2022 10:56:20] "GET / HTTP/1.1" 200 -
+172.104.159.48 - - [02/May/2022 10:56:20] "GET /?=PHPE9568F36-D428-11d2-A769-00AA001ACF42 HTTP/1.1" 200 -
+172.104.159.48 - - [02/May/2022 10:56:20] "GET /Portal/Portal.mwsl HTTP/1.1" 404 -
+172.104.159.48 - - [02/May/2022 10:56:20] "GET /hHRZ HTTP/1.1" 404 -
+172.104.159.48 - - [02/May/2022 10:56:20] "POST / HTTP/1.1" 405 -
+172.104.159.48 - - [02/May/2022 10:56:20] "POST /sdk HTTP/1.1" 404 -
+172.104.159.48 - - [02/May/2022 10:56:20] "GET /menu.php HTTP/1.1" 404 -
+172.104.159.48 - - [02/May/2022 10:56:20] "GET /pools/default/buckets HTTP/1.1" 404 -
+172.104.159.48 - - [02/May/2022 10:56:20] "GET /?=PHPB8B5F2A0-3C92-11d3-A3A9-4C7B08C10000 HTTP/1.1" 200 -
+172.104.159.48 - - [02/May/2022 10:56:20] "POST /functionRouter HTTP/1.1" 404 -
+172.104.159.48 - - [02/May/2022 10:56:20] "GET /docs/cplugError.html/ HTTP/1.1" 404 -
+172.104.159.48 - - [02/May/2022 10:56:20] "GET / HTTP/1.1" 200 -
+172.104.159.48 - - [02/May/2022 10:56:20] "GET /Portal0000.htm HTTP/1.1" 404 -
+172.104.159.48 - - [02/May/2022 10:56:20] "GET /HNAP1 HTTP/1.1" 404 -
+172.104.159.48 - - [02/May/2022 10:56:20] "GET /inicio.shtml HTTP/1.1" 404 -
+172.104.159.48 - - [02/May/2022 10:56:20] "GET /pools HTTP/1.1" 404 -
+172.104.159.48 - - [02/May/2022 10:56:20] "GET /__Additional HTTP/1.1" 404 -
+172.104.159.48 - - [02/May/2022 10:56:21] "HEAD / HTTP/1.1" 200 -
+172.104.159.48 - - [02/May/2022 10:56:21] "GET /home.aspx HTTP/1.1" 404 -
+172.104.159.48 - - [02/May/2022 10:56:21] "GET / HTTP/1.1" 200 -
+172.104.159.48 - - [02/May/2022 10:56:21] "GET /index.jsp HTTP/1.1" 404 -
+172.104.159.48 - - [02/May/2022 10:56:21] "GET /tomcatwar.jsp HTTP/1.1" 404 -
+172.104.159.48 - - [02/May/2022 10:56:21] "GET /tomcatwar.jsp?pwd=j&cmd=id HTTP/1.1" 404 -
+172.104.159.48 - - [02/May/2022 10:56:21] "GET /admin.asp HTTP/1.1" 404 -
+172.104.159.48 - - [02/May/2022 10:56:21] "GET /favicon.ico HTTP/1.1" 404 -
+172.104.159.48 - - [02/May/2022 10:56:22] "GET /ghksjdghdfksanitycheckqwerjlhfgjksdghlid HTTP/1.1" 404 -
+172.104.159.48 - - [02/May/2022 10:56:22] "GET /index.asp HTTP/1.1" 404 -
+172.104.159.48 - - [02/May/2022 10:56:22] "GET /readme.txt HTTP/1.1" 404 -
+172.104.159.48 - - [02/May/2022 10:56:23] "GET /admin.pl HTTP/1.1" 404 -
+172.104.159.48 - - [02/May/2022 10:56:23] "GET /admin.php HTTP/1.1" 404 -
+172.104.159.48 - - [02/May/2022 10:56:23] "GET /home.pl HTTP/1.1" 404 -
+172.104.159.48 - - [02/May/2022 10:56:24] "GET /admin.jsp HTTP/1.1" 404 -
+172.104.159.48 - - [02/May/2022 10:56:24] "GET /admin.jsa HTTP/1.1" 404 -
+172.104.159.48 - - [02/May/2022 10:56:24] "GET /start.cfm HTTP/1.1" 404 -
+172.104.159.48 - - [02/May/2022 10:56:25] "GET /admin.jhtml HTTP/1.1" 404 -
+172.104.159.48 - - [02/May/2022 10:56:25] "GET / HTTP/1.1" 200 -
+172.104.159.48 - - [02/May/2022 10:56:25] "GET /index.jhtml HTTP/1.1" 404 -
+172.104.159.48 - - [02/May/2022 10:56:26] code 400, message Bad request version ("TT-T±l?lâÑKº¸YÍâ?oSÔÑ»ØKm¯\x8cÎ\x98\x7f\x8c|\x00\x9c\x13\x02\x13\x03\x13\x01\x003\x009\x005\x00/À,À0\x00£\x00\x9fÌ©Ì¨ÌªÀ¯À\xadÀ£À\x9fÀ]ÀaÀWÀSÀ+À/\x00¢\x00\x9eÀ®À¬À¢À\x9eÀ\\À`ÀVÀRÀ$À(\x00k\x00jÀsÀw\x00Ä\x00ÃÀ#À'\x00g\x00@ÀrÀv\x00¾\x00½À")
+172.104.159.48 - - [02/May/2022 10:56:26] "  üc;L¯jöïèJ¯"J1^@ë«Kèr§O¥ó_ TT-T±l?lâÑKº¸YÍâ?oSÔÑ»ØKm¯Î|  3 9 5 /À,À0 £ Ì©Ì¨ÌªÀ¯À­À£ÀÀ]ÀaÀWÀSÀ+À/ ¢ À®À¬À¢ÀÀ\À`ÀVÀRÀ$À( k jÀsÀw Ä ÃÀ#À' g @ÀrÀv ¾ ½À" HTTPStatus.BAD_REQUEST -
+172.104.159.48 - - [02/May/2022 10:56:31] "GET / HTTP/1.0" 200 -
+172.104.159.48 - - [02/May/2022 10:56:31] "GET / HTTP/1.1" 200 -
+172.104.159.48 - - [02/May/2022 10:56:31] code 400, message Bad request syntax ('\x0e\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00bbbb0100000001')
+172.104.159.48 - - [02/May/2022 10:56:31] "               bbbb0100000001" HTTPStatus.BAD_REQUEST -
+64.225.64.121 - - [02/May/2022 11:44:57] "GET / HTTP/1.0" 200 -
+162.142.125.213 - - [02/May/2022 15:11:53] code 400, message Bad request version ('À\x14À')
+162.142.125.213 - - [02/May/2022 15:11:53] " î  êü[ãqµ÷öMË$vè³-¢àüMo9MÐ%èî cÙÄMÏ=¶86:-a;¼oíÝî5Íõ &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ" HTTPStatus.BAD_REQUEST -
+162.142.125.213 - - [02/May/2022 15:11:54] "GET / HTTP/1.1" 200 -
+162.142.125.213 - - [02/May/2022 15:11:54] "GET / HTTP/1.1" 200 -
+162.142.125.213 - - [02/May/2022 15:11:54] code 505, message Invalid HTTP version (2.0)
+162.142.125.213 - - [02/May/2022 15:11:54] "PRI * HTTP/2.0" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
+206.81.23.219 - - [02/May/2022 17:13:43] "GET /script HTTP/1.1" 404 -
+206.81.23.219 - - [02/May/2022 17:13:44] "GET /login HTTP/1.1" 404 -
+206.81.23.219 - - [02/May/2022 17:13:44] "GET /jenkins/login HTTP/1.1" 404 -
+206.81.23.219 - - [02/May/2022 17:13:44] "GET / HTTP/1.1" 200 -
+206.81.23.219 - - [02/May/2022 17:13:44] "GET /manager/html HTTP/1.1" 404 -
+167.248.133.47 - - [02/May/2022 18:02:15] code 400, message Bad request version ('À\x14À')
+167.248.133.47 - - [02/May/2022 18:02:15] " î  êÕe|¢G´ÙO]à%ãÑÈÁ§K5W¯ß];Dà ÈÙcdËë¨	HÿÝ2¾ÛÜÒCS¤PëÝ &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ" HTTPStatus.BAD_REQUEST -
+167.248.133.47 - - [02/May/2022 18:02:16] "GET / HTTP/1.1" 200 -
+167.248.133.47 - - [02/May/2022 18:02:16] "GET / HTTP/1.1" 200 -
+167.248.133.47 - - [02/May/2022 18:02:16] code 505, message Invalid HTTP version (2.0)
+167.248.133.47 - - [02/May/2022 18:02:16] "PRI * HTTP/2.0" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
+91.241.19.187 - - [02/May/2022 20:53:57] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+91.241.19.187 - - [02/May/2022 20:53:57] "  /*à     Cookie: mstshash=Administr" HTTPStatus.BAD_REQUEST -
+198.235.24.19 - - [02/May/2022 21:07:07] "GET / HTTP/1.0" 200 -
+205.210.31.22 - - [02/May/2022 23:41:42] code 400, message Bad request version ('À(À$À\x14À')
+205.210.31.22 - - [02/May/2022 23:41:42] " Ê  Æ3Ýñ£{T_7ßÃ Ök^»Z%cæçX(]m  hÌÌÀ/À+À0À,ÀÀÀ'À#ÀÀ	À(À$ÀÀ" HTTPStatus.BAD_REQUEST -
+192.64.113.244 - - [03/May/2022 00:34:51] code 400, message Bad request version ('>x')
+192.64.113.244 - - [03/May/2022 00:34:51] "  ü¸Ó©¸~ã§Ô Ip3J²É&váã³ýgZ	ÖÐ» Þ%>x" HTTPStatus.BAD_REQUEST -
+198.235.24.20 - - [03/May/2022 01:12:54] "GET / HTTP/1.1" 200 -
+200.56.74.253 - - [03/May/2022 01:26:38] "GET / HTTP/1.1" 200 -
+200.56.74.253 - - [03/May/2022 01:26:38] "GET /swaggerui/swagger-ui.css HTTP/1.1" 304 -
+200.56.74.253 - - [03/May/2022 01:26:38] "GET /swaggerui/droid-sans.css HTTP/1.1" 304 -
+200.56.74.253 - - [03/May/2022 01:26:38] "GET /swaggerui/swagger-ui-standalone-preset.js HTTP/1.1" 304 -
+200.56.74.253 - - [03/May/2022 01:26:38] "GET /swaggerui/swagger-ui-bundle.js HTTP/1.1" 304 -
+200.56.74.253 - - [03/May/2022 02:11:52] "GET / HTTP/1.1" 200 -
+192.241.223.31 - - [03/May/2022 02:14:08] code 400, message Bad request syntax ('MGLNDD_18.189.21.2_8888')
+192.241.223.31 - - [03/May/2022 02:14:08] "MGLNDD_18.189.21.2_8888" HTTPStatus.BAD_REQUEST -
+162.142.125.213 - - [03/May/2022 02:57:05] code 400, message Bad request version ('À\x14À')
+162.142.125.213 - - [03/May/2022 02:57:05] " î  ê­5¡¢¿®X;ÑAÂq(¾Xý'Ì5º² 8 <Lµïbâl@t!À,"½«pôqwv¬¦Kö &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ" HTTPStatus.BAD_REQUEST -
+162.142.125.213 - - [03/May/2022 02:57:06] "GET / HTTP/1.1" 200 -
+162.142.125.213 - - [03/May/2022 02:57:06] "GET / HTTP/1.1" 200 -
+162.142.125.213 - - [03/May/2022 02:57:06] code 505, message Invalid HTTP version (2.0)
+162.142.125.213 - - [03/May/2022 02:57:06] "PRI * HTTP/2.0" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
+128.1.248.26 - - [03/May/2022 07:00:00] "GET / HTTP/1.1" 200 -
+198.235.24.31 - - [03/May/2022 11:00:58] code 400, message Bad request version ('À(À$À\x14À')
+198.235.24.31 - - [03/May/2022 11:00:58] " Ê  Æ~î"uy¶ÞK%Ú7vùÈeÐ°g 7Åá§%  hÌÌÀ/À+À0À,ÀÀÀ'À#ÀÀ	À(À$ÀÀ" HTTPStatus.BAD_REQUEST -
+192.241.218.246 - - [03/May/2022 15:16:25] "GET / HTTP/1.1" 200 -
+162.142.125.213 - - [03/May/2022 16:57:14] code 400, message Bad request version ('À\x14À')
+162.142.125.213 - - [03/May/2022 16:57:14] " î  êkgÎVd$´¸={dËÝv4±ç¶J]  (æ¼d«ÂzJ&O<Hnr)~Sz0è´>÷ËÑ &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ" HTTPStatus.BAD_REQUEST -
+162.142.125.213 - - [03/May/2022 16:57:15] "GET / HTTP/1.1" 200 -
+162.142.125.213 - - [03/May/2022 16:57:15] "GET / HTTP/1.1" 200 -
+162.142.125.213 - - [03/May/2022 16:57:15] code 505, message Invalid HTTP version (2.0)
+162.142.125.213 - - [03/May/2022 16:57:15] "PRI * HTTP/2.0" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
+20.127.144.121 - - [03/May/2022 21:58:41] code 400, message Bad request version ('\x07\x01\x00\x00!5/////./..//////./..//////./../flash/rw/store/user.dat\x02\x00ÿ\x88\x02\x00\x00\x00\x00\x00\x08\x00\x00\x00\x01\x00ÿ\x88\x02\x00\x02\x00\x00\x00\x02\x00\x00\x00')
+20.127.144.121 - - [03/May/2022 21:58:41] "h fM2 ÿ ÿ	 ÿ	  !5/////./..//////./..//////./../flash/rw/store/user.dat ÿ         ÿ       " HTTPStatus.BAD_REQUEST -
+198.235.24.9 - - [03/May/2022 23:39:25] code 400, message Bad request version ('À(À$À\x14À')
+198.235.24.9 - - [03/May/2022 23:39:25] " Ê  Æº©ÅúÀ¹Ba]Ù8&æyµAÄÜ°©·Ü&¡*I  hÌÌÀ/À+À0À,ÀÀÀ'À#ÀÀ	À(À$ÀÀ" HTTPStatus.BAD_REQUEST -
+192.241.212.220 - - [04/May/2022 02:43:18] code 400, message Bad request syntax ('MGLNDD_18.189.21.2_8888')
+192.241.212.220 - - [04/May/2022 02:43:18] "MGLNDD_18.189.21.2_8888" HTTPStatus.BAD_REQUEST -
+198.235.24.19 - - [04/May/2022 03:24:13] "GET / HTTP/1.0" 200 -
+45.93.201.29 - - [04/May/2022 04:40:46] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+45.93.201.29 - - [04/May/2022 04:40:46] "  /*à     Cookie: mstshash=Administr" HTTPStatus.BAD_REQUEST -
+205.210.31.12 - - [04/May/2022 04:54:39] "GET / HTTP/1.1" 200 -
+103.203.58.5 - - [04/May/2022 05:16:59] "GET / HTTP/1.1" 200 -
+162.142.125.210 - - [04/May/2022 06:00:52] code 400, message Bad request version ('À\x14À')
+162.142.125.210 - - [04/May/2022 06:00:52] " î  ê´¹¬â²%XØj´Õü²_ÖsK oU!DÇAT¡Ö7O\UÕjÊÐü	Û¶0z &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ" HTTPStatus.BAD_REQUEST -
+162.142.125.210 - - [04/May/2022 06:00:53] "GET / HTTP/1.1" 200 -
+162.142.125.210 - - [04/May/2022 06:00:53] "GET / HTTP/1.1" 200 -
+162.142.125.210 - - [04/May/2022 06:00:53] code 505, message Invalid HTTP version (2.0)
+162.142.125.210 - - [04/May/2022 06:00:53] "PRI * HTTP/2.0" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
+86.186.52.129 - - [04/May/2022 15:13:28] "GET / HTTP/1.1" 200 -
+173.169.26.226 - - [04/May/2022 15:13:28] "GET /common/info.cgi HTTP/1.1" 404 -
+68.80.105.179 - - [04/May/2022 15:13:29] "GET /HNAP1/ HTTP/1.1" 404 -
+81.220.66.82 - - [04/May/2022 15:13:29] "GET /currentsetting.htm HTTP/1.1" 404 -
+173.209.171.21 - - [04/May/2022 15:13:30] "GET /api/system/deviceinfo HTTP/1.1" 404 -
+35.132.172.232 - - [04/May/2022 15:13:31] "GET /dniapi/userInfos HTTP/1.1" 404 -
+167.94.138.46 - - [04/May/2022 17:38:52] code 400, message Bad request version ('À\x14À')
+167.94.138.46 - - [04/May/2022 17:38:52] " î  êÁõ¤<=Cá·(Yóe;Áä^µ}ëèµ»Á üY¯m.WDwh?½£ïäZ1;Ð2ÇË &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ" HTTPStatus.BAD_REQUEST -
+167.94.138.46 - - [04/May/2022 17:38:53] "GET / HTTP/1.1" 200 -
+167.94.138.46 - - [04/May/2022 17:38:53] "GET / HTTP/1.1" 200 -
+167.94.138.46 - - [04/May/2022 17:38:54] code 505, message Invalid HTTP version (2.0)
+167.94.138.46 - - [04/May/2022 17:38:54] "PRI * HTTP/2.0" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
+92.118.161.41 - - [04/May/2022 18:56:52] "GET / HTTP/1.1" 200 -
+192.241.216.63 - - [04/May/2022 20:25:43] "GET / HTTP/1.1" 200 -
+198.235.24.18 - - [04/May/2022 22:00:08] "GET / HTTP/1.0" 200 -
+92.118.161.17 - - [04/May/2022 23:20:27] "GET / HTTP/1.0" 200 -
+205.210.31.131 - - [05/May/2022 01:01:27] "GET / HTTP/1.1" 200 -
+198.235.24.137 - - [05/May/2022 02:57:49] code 400, message Bad HTTP/0.9 request type ("\x16\x03\x01\x00Ê\x01\x00\x00Æ\x03\x03(\x86nºY\x91¸8Ý¡,su^\x8d<ç)ýþ1KYÄÑ\x13,×R@âe\x00\x00hÌ\x14Ì\x13À/À+À0À,À\x11À\x07À'À#À\x13À")
+198.235.24.137 - - [05/May/2022 02:57:49] " Ê  Æ(nºY¸8Ý¡,su^<ç)ýþ1KYÄÑ,×R@âe  hÌÌÀ/À+À0À,ÀÀÀ'À#ÀÀ	À(À$ÀÀ" HTTPStatus.BAD_REQUEST -
+162.142.125.221 - - [05/May/2022 04:22:17] code 400, message Bad request version ('À\x14À')
+162.142.125.221 - - [05/May/2022 04:22:17] " î  êu6_±¡÷¦Ön 	rþ(ÅRu|Ñ&g*å\ [ua´DlèRz2k¯BnB~ ±Ö-ú\ªä\FY &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ" HTTPStatus.BAD_REQUEST -
+162.142.125.221 - - [05/May/2022 04:22:18] "GET / HTTP/1.1" 200 -
+162.142.125.221 - - [05/May/2022 04:22:18] "GET / HTTP/1.1" 200 -
+162.142.125.221 - - [05/May/2022 04:22:18] code 505, message Invalid HTTP version (2.0)
+162.142.125.221 - - [05/May/2022 04:22:18] "PRI * HTTP/2.0" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
+162.142.125.220 - - [05/May/2022 10:05:06] code 400, message Bad request version ('\x8fY')
+162.142.125.220 - - [05/May/2022 10:05:06] " î  êQóJ$ô47©0Y" HTTPStatus.BAD_REQUEST -
+162.142.125.220 - - [05/May/2022 10:05:07] "GET / HTTP/1.1" 200 -
+162.142.125.220 - - [05/May/2022 10:05:07] "GET / HTTP/1.1" 200 -
+162.142.125.220 - - [05/May/2022 10:05:07] code 505, message Invalid HTTP version (2.0)
+162.142.125.220 - - [05/May/2022 10:05:07] "PRI * HTTP/2.0" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
+159.223.164.40 - - [05/May/2022 12:19:29] "HEAD / HTTP/1.0" 200 -
+159.223.164.40 - - [05/May/2022 12:19:29] "GET /system_api.php HTTP/1.1" 404 -
+159.223.164.40 - - [05/May/2022 12:19:29] "GET /c/version.js HTTP/1.1" 404 -
+159.223.164.40 - - [05/May/2022 12:19:29] "GET /streaming/clients_live.php HTTP/1.1" 404 -
+159.223.164.40 - - [05/May/2022 12:19:29] "GET /stalker_portal/c/version.js HTTP/1.1" 404 -
+159.223.164.40 - - [05/May/2022 12:19:29] "GET /stream/live.php HTTP/1.1" 404 -
+159.223.164.40 - - [05/May/2022 12:19:29] "GET /flu/403.html HTTP/1.1" 404 -
+159.223.164.40 - - [05/May/2022 12:19:29] "GET / HTTP/1.1" 200 -
+192.241.220.132 - - [05/May/2022 13:51:24] code 400, message Bad request syntax ('MGLNDD_18.189.21.2_8888')
+192.241.220.132 - - [05/May/2022 13:51:24] "MGLNDD_18.189.21.2_8888" HTTPStatus.BAD_REQUEST -
+205.210.31.5 - - [05/May/2022 18:32:53] "GET / HTTP/1.0" 200 -
+162.142.125.211 - - [05/May/2022 19:52:01] code 400, message Bad request version ('À\x14À')
+162.142.125.211 - - [05/May/2022 19:52:01] " î  êêÛ*O_2Å7ªúäVáqËQè¦Ì	ä»Û ±LÖO<]4ÕþÅc¨V{ã<ÐiÏþÊhñuÐ7è &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ" HTTPStatus.BAD_REQUEST -
+162.142.125.211 - - [05/May/2022 19:52:02] "GET / HTTP/1.1" 200 -
+162.142.125.211 - - [05/May/2022 19:52:02] "GET / HTTP/1.1" 200 -
+162.142.125.211 - - [05/May/2022 19:52:02] code 505, message Invalid HTTP version (2.0)
+162.142.125.211 - - [05/May/2022 19:52:02] "PRI * HTTP/2.0" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
+205.210.31.149 - - [05/May/2022 21:54:45] code 400, message Bad HTTP/0.9 request type ("\x16\x03\x01\x00Ê\x01\x00\x00Æ\x03\x03sã¯Ó×ð\x82á¼¹Ù\x0e)±\x1aÊâ\x9aGþÑ\x11\x00\x03¾0\x05èÁÞ\x9d'\x00\x00hÌ\x14Ì\x13À/À+À0À,À\x11À\x07À'À#À\x13À")
+205.210.31.149 - - [05/May/2022 21:54:45] " Ê  Æsã¯Ó×ðá¼¹Ù)±ÊâGþÑ ¾0èÁÞ'  hÌÌÀ/À+À0À,ÀÀÀ'À#ÀÀ	À(À$ÀÀ" HTTPStatus.BAD_REQUEST -
+198.235.24.134 - - [05/May/2022 22:39:30] "GET / HTTP/1.1" 200 -
+205.210.31.148 - - [05/May/2022 23:49:07] code 400, message Bad request version ('À(À$À\x14À')
+205.210.31.148 - - [05/May/2022 23:49:07] " Ê  Æ-½[²,¶ÿ~qª2LÑ[Æóð|>0·N  hÌÌÀ/À+À0À,ÀÀÀ'À#ÀÀ	À(À$ÀÀ" HTTPStatus.BAD_REQUEST -
+192.241.192.43 - - [06/May/2022 04:28:05] "GET / HTTP/1.1" 200 -
+45.134.144.140 - - [06/May/2022 07:30:32] code 400, message Bad request version ('\x00\x9eÀ(À$À\x14À')
+45.134.144.140 - - [06/May/2022 07:30:32] " ü  øë9®¢T[öÛæ!VÎ7Ü°pü]BlÆOjMú  À0À,À2À.À/À+À1À- ¥ £ ¡  ¤ ¢   À(À$ÀÀ" HTTPStatus.BAD_REQUEST -
+94.102.61.20 - - [06/May/2022 07:58:01] code 400, message Bad request version ('À\x14À')
+94.102.61.20 - - [06/May/2022 07:58:01] "   ¥Ïºé)`=O)7¾Ä¨Ñ7{yÙÑêìatmc%£  À/À+ÀÀÀÀ	ÀÀ" HTTPStatus.BAD_REQUEST -
+147.78.47.57 - - [06/May/2022 08:15:14] code 400, message Bad request version ("M\x8bUIÐÊù\x8f§B\x03\x99Â\x8eÀ\x00>\x13\x02\x13\x03\x13\x01À,À0\x00\x9fÌ©Ì¨ÌªÀ+À/\x00\x9eÀ$À(\x00kÀ#À'\x00gÀ")
+147.78.47.57 - - [06/May/2022 08:15:14] "  ürG.óx¶£ó fójxÓôUzA¼JmÆ¦ç Ú"]Ò(ÕfXî½]MUIÐÊù§BÂÀ >À,À0 Ì©Ì¨ÌªÀ+À/ À$À( kÀ#À' gÀ" HTTPStatus.BAD_REQUEST -
+161.97.102.240 - - [06/May/2022 09:13:33] code 400, message Bad request version ('\x9aºSØ\x978&bH\x8büri\x1bl¢\x17¿æ\x00\x01<Ì\x14Ì\x13Ì\x15À0À,À(À$À\x14À')
+161.97.102.240 - - [06/May/2022 09:13:33] "ú öqÁÂ®Mcz¼xg ºSØ8&bHüril¢¿æ <ÌÌÌÀ0À,À(À$ÀÀ" HTTPStatus.BAD_REQUEST -
+162.62.191.231 - - [06/May/2022 09:30:28] "GET / HTTP/1.1" 200 -
+209.141.35.128 - - [06/May/2022 09:30:35] "GET / HTTP/1.1" 200 -
+211.95.50.7 - - [06/May/2022 09:30:42] "GET / HTTP/1.1" 200 -
+211.95.50.8 - - [06/May/2022 09:30:44] "GET /swaggerui/swagger-ui-bundle.js HTTP/1.1" 200 -
+211.95.50.8 - - [06/May/2022 09:30:44] "GET /swaggerui/swagger-ui-standalone-preset.js HTTP/1.1" 200 -
+211.95.50.7 - - [06/May/2022 09:30:47] "GET /swagger.json HTTP/1.1" 200 -
+209.141.36.231 - - [06/May/2022 09:30:52] "GET /favicon.ico HTTP/1.1" 404 -
+192.241.220.59 - - [06/May/2022 13:48:21] code 400, message Bad request syntax ('MGLNDD_18.189.21.2_8888')
+192.241.220.59 - - [06/May/2022 13:48:21] "MGLNDD_18.189.21.2_8888" HTTPStatus.BAD_REQUEST -
+185.180.143.15 - - [06/May/2022 14:01:09] "GET / HTTP/1.1" 200 -
+45.227.255.154 - - [06/May/2022 15:17:23] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+45.227.255.154 - - [06/May/2022 15:17:23] "  /*à     Cookie: mstshash=Administr" HTTPStatus.BAD_REQUEST -
+162.142.125.219 - - [06/May/2022 18:23:47] code 400, message Bad request version ('À\x14À')
+162.142.125.219 - - [06/May/2022 18:23:47] " î  ê©h[¸ ÃÞX@à´ýí¡äÁâOièfQZV VZe-çMlêM_Ê{C>ö`=ç¿$ÜÇ~Ã &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ" HTTPStatus.BAD_REQUEST -
+162.142.125.219 - - [06/May/2022 18:23:48] "GET / HTTP/1.1" 200 -
+162.142.125.219 - - [06/May/2022 18:23:48] "GET / HTTP/1.1" 200 -
+162.142.125.219 - - [06/May/2022 18:23:48] code 505, message Invalid HTTP version (2.0)
+162.142.125.219 - - [06/May/2022 18:23:48] "PRI * HTTP/2.0" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
+205.210.31.151 - - [06/May/2022 20:56:29] code 400, message Bad request version ('À(À$À\x14À')
+205.210.31.151 - - [06/May/2022 20:56:29] " Ê  ÆYÞýµêZ÷*=,²ø ¨Æ.gîKºªX£Õ  hÌÌÀ/À+À0À,ÀÀÀ'À#ÀÀ	À(À$ÀÀ" HTTPStatus.BAD_REQUEST -
+198.235.24.23 - - [06/May/2022 23:43:09] "GET / HTTP/1.1" 200 -
+180.149.125.173 - - [07/May/2022 03:26:01] "GET / HTTP/1.1" 200 -
+192.241.213.239 - - [07/May/2022 04:28:28] "GET / HTTP/1.1" 200 -
+34.122.31.109 - - [07/May/2022 06:05:16] code 400, message Bad request version ('"control_gpu"}')
+34.122.31.109 - - [07/May/2022 06:05:16] "{"id": 0, "jsonrpc": "2.0", "method": "control_gpu"}" HTTPStatus.BAD_REQUEST -
+205.210.31.143 - - [07/May/2022 07:15:26] "GET / HTTP/1.0" 200 -
+118.26.110.65 - - [07/May/2022 10:05:52] "GET / HTTP/1.1" 200 -
+165.154.6.176 - - [07/May/2022 10:13:17] "GET / HTTP/1.1" 200 -
+165.154.6.176 - - [07/May/2022 10:13:18] "GET /swaggerui/favicon-32x32.png HTTP/1.1" 200 -
+165.154.6.176 - - [07/May/2022 10:13:20] "GET /swaggerui/swagger-ui-bundle.js HTTP/1.1" 200 -
+165.154.6.176 - - [07/May/2022 10:13:20] "GET /swaggerui/swagger-ui-standalone-preset.js HTTP/1.1" 200 -
+165.154.6.176 - - [07/May/2022 10:13:23] "GET //sitemap.xml HTTP/1.1" 308 -
+165.154.6.176 - - [07/May/2022 10:13:23] "GET //.well-known/security.txt HTTP/1.1" 404 -
+165.154.6.176 - - [07/May/2022 10:13:23] "GET //robots.txt HTTP/1.1" 308 -
+192.241.215.54 - - [07/May/2022 14:40:48] code 400, message Bad request syntax ('MGLNDD_18.189.21.2_8888')
+192.241.215.54 - - [07/May/2022 14:40:48] "MGLNDD_18.189.21.2_8888" HTTPStatus.BAD_REQUEST -
+162.142.125.212 - - [07/May/2022 16:37:11] code 400, message Bad request version ('<\x92\x17\x88lYÍ\x8e\xad§®b0¨')
+162.142.125.212 - - [07/May/2022 16:37:11] " î  ê$ý$ùº4N:¤Ûb§Áô¤!_]½eX Vvx<lYÍ­§®b0¨" HTTPStatus.BAD_REQUEST -
+162.142.125.212 - - [07/May/2022 16:37:12] "GET / HTTP/1.1" 200 -
+162.142.125.212 - - [07/May/2022 16:37:13] "GET / HTTP/1.1" 200 -
+162.142.125.212 - - [07/May/2022 16:37:13] code 505, message Invalid HTTP version (2.0)
+162.142.125.212 - - [07/May/2022 16:37:13] "PRI * HTTP/2.0" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
+89.248.165.29 - - [07/May/2022 16:39:21] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+89.248.165.29 - - [07/May/2022 16:39:21] "  /*à     Cookie: mstshash=Administr" HTTPStatus.BAD_REQUEST -
+104.140.188.10 - - [07/May/2022 17:00:12] "GET / HTTP/1.0" 200 -
+94.232.41.214 - - [07/May/2022 20:10:26] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+94.232.41.214 - - [07/May/2022 20:10:26] "  /*à     Cookie: mstshash=Administr" HTTPStatus.BAD_REQUEST -
+89.248.165.120 - - [07/May/2022 21:19:59] code 400, message Bad request syntax ('\x03\x00\x00\x13\x0eà\x00\x00\x00\x00\x00\x01\x00\x08\x00\x02\x00\x00\x00')
+89.248.165.120 - - [07/May/2022 21:19:59] "  à          " HTTPStatus.BAD_REQUEST -
+167.94.138.120 - - [07/May/2022 21:51:47] code 400, message Bad request version ('À\x14À')
+167.94.138.120 - - [07/May/2022 21:51:47] " î  ê»ÅCXr&WM[ÛôéjZ¡	w>&õ¢ÉZ2¼] ×¿ß4®WlÁ>dÙ grêÒTnC&¸O &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ" HTTPStatus.BAD_REQUEST -
+167.94.138.120 - - [07/May/2022 21:51:48] "GET / HTTP/1.1" 200 -
+167.94.138.120 - - [07/May/2022 21:51:48] "GET / HTTP/1.1" 200 -
+167.94.138.120 - - [07/May/2022 21:51:49] code 505, message Invalid HTTP version (2.0)
+167.94.138.120 - - [07/May/2022 21:51:49] "PRI * HTTP/2.0" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
+205.210.31.148 - - [08/May/2022 01:40:53] "GET / HTTP/1.1" 200 -
+104.206.128.74 - - [08/May/2022 02:33:41] "GET / HTTP/1.1" 200 -
+205.210.31.158 - - [08/May/2022 03:00:31] "GET / HTTP/1.0" 200 -
+205.210.31.17 - - [08/May/2022 03:28:37] code 400, message Bad request version ('À(À$À\x14À')
+205.210.31.17 - - [08/May/2022 03:28:37] " Ê  Æï\ÐWÄß83µçD2%TQüï6u 9*   hÌÌÀ/À+À0À,ÀÀÀ'À#ÀÀ	À(À$ÀÀ" HTTPStatus.BAD_REQUEST -
+192.241.213.68 - - [08/May/2022 05:44:33] "GET / HTTP/1.1" 200 -
+62.233.50.179 - - [08/May/2022 05:46:03] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+62.233.50.179 - - [08/May/2022 05:46:03] "  /*à     Cookie: mstshash=Administr" HTTPStatus.BAD_REQUEST -
+200.56.74.253 - - [08/May/2022 07:09:33] "GET / HTTP/1.1" 200 -
+185.220.103.115 - - [08/May/2022 07:34:38] "GET / HTTP/1.1" 200 -
+185.220.101.56 - - [08/May/2022 07:34:39] "GET /favicon.ico HTTP/1.1" 404 -
+137.184.1.217 - - [08/May/2022 08:35:05] "GET / HTTP/1.0" 200 -
+192.241.212.132 - - [08/May/2022 18:02:43] code 400, message Bad request syntax ('MGLNDD_18.189.21.2_8888')
+192.241.212.132 - - [08/May/2022 18:02:43] "MGLNDD_18.189.21.2_8888" HTTPStatus.BAD_REQUEST -
+205.210.31.17 - - [08/May/2022 19:06:42] "GET / HTTP/1.0" 200 -
+167.248.133.120 - - [08/May/2022 21:14:24] code 400, message Bad request version ('À\x14À')
+167.248.133.120 - - [08/May/2022 21:14:24] " î  êoO.fÛ<jW87Ï½óh}0úÏÛÑùC¨õB Ér¤j¦oË"þ[.ýS;\<tcRúÞ·4 &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ" HTTPStatus.BAD_REQUEST -
+167.248.133.120 - - [08/May/2022 21:14:25] "GET / HTTP/1.1" 200 -
+167.248.133.120 - - [08/May/2022 21:14:25] "GET / HTTP/1.1" 200 -
+167.248.133.120 - - [08/May/2022 21:14:25] code 505, message Invalid HTTP version (2.0)
+167.248.133.120 - - [08/May/2022 21:14:25] "PRI * HTTP/2.0" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
+198.235.24.13 - - [08/May/2022 22:43:28] "GET / HTTP/1.1" 200 -
+162.142.125.221 - - [09/May/2022 00:03:35] code 400, message Bad request version ('À\x14À')
+162.142.125.221 - - [09/May/2022 00:03:35] " î  êaw@Ò+W}É2m«ù××LoDxTAr­ åë¿u|;îàw9Û§.oÌÔïè9ÍG &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ" HTTPStatus.BAD_REQUEST -
+162.142.125.221 - - [09/May/2022 00:03:36] "GET / HTTP/1.1" 200 -
+162.142.125.221 - - [09/May/2022 00:03:36] "GET / HTTP/1.1" 200 -
+162.142.125.221 - - [09/May/2022 00:03:36] code 505, message Invalid HTTP version (2.0)
+162.142.125.221 - - [09/May/2022 00:03:36] "PRI * HTTP/2.0" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
+162.142.125.8 - - [09/May/2022 02:54:48] code 400, message Bad request version ('À\x14À')
+162.142.125.8 - - [09/May/2022 02:54:48] " î  êÛú¯ Ås9Ôíf<i®ü8È%<{A xøNÜ3Í)Òä|àp7q,±P°>£ &l@ &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ" HTTPStatus.BAD_REQUEST -
+162.142.125.8 - - [09/May/2022 02:54:49] "GET / HTTP/1.1" 200 -
+162.142.125.8 - - [09/May/2022 02:54:49] "GET / HTTP/1.1" 200 -
+162.142.125.8 - - [09/May/2022 02:54:49] code 505, message Invalid HTTP version (2.0)
+162.142.125.8 - - [09/May/2022 02:54:49] "PRI * HTTP/2.0" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
+198.235.24.32 - - [09/May/2022 03:50:04] code 400, message Bad HTTP/0.9 request type ("\x16\x03\x01\x00Ê\x01\x00\x00Æ\x03\x03µsd©4ò\x1bs\x88\x0fu\x97}ØÕÖi\x9cÈê¾\x82XÉ\x99\x9a\x01OpÐyð\x00\x00hÌ\x14Ì\x13À/À+À0À,À\x11À\x07À'À#À\x13À")
+198.235.24.32 - - [09/May/2022 03:50:04] " Ê  Æµsd©4òsu}ØÕÖiÈê¾XÉOpÐyð  hÌÌÀ/À+À0À,ÀÀÀ'À#ÀÀ	À(À$ÀÀ" HTTPStatus.BAD_REQUEST -
+181.55.251.60 - - [09/May/2022 08:23:53] code 400, message Bad request version ('Å~ò#I\x19µ~w\x03gXN\x9f\x8fö3êÔ«WÊ\x00"\x13\x01\x13\x03\x13\x02À+À/Ì©Ì¨À,À0À')
+181.55.251.60 - - [09/May/2022 08:23:53] "  üËt[lGæÎº¹t1&ÐÉùdñöQðg=·ê×¬s r=±x¿¥sÅ~ò#Iµ~wgXNö3êÔ«WÊ "À+À/Ì©Ì¨À,À0À" HTTPStatus.BAD_REQUEST -
+181.55.251.60 - - [09/May/2022 08:23:55] "GET / HTTP/1.1" 200 -
+181.55.251.60 - - [09/May/2022 08:23:55] "GET /swaggerui/droid-sans.css HTTP/1.1" 200 -
+181.55.251.60 - - [09/May/2022 08:23:55] "GET /swaggerui/swagger-ui-bundle.js HTTP/1.1" 200 -
+181.55.251.60 - - [09/May/2022 08:23:55] "GET /swaggerui/swagger-ui.css HTTP/1.1" 200 -
+181.55.251.60 - - [09/May/2022 08:23:55] "GET /swaggerui/swagger-ui-standalone-preset.js HTTP/1.1" 200 -
+181.55.251.60 - - [09/May/2022 08:23:58] "GET /swaggerui/favicon-16x16.png HTTP/1.1" 200 -
+181.55.251.60 - - [09/May/2022 08:23:59] "GET /swagger.json HTTP/1.1" 200 -
+89.248.165.24 - - [09/May/2022 09:05:05] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+89.248.165.24 - - [09/May/2022 09:05:05] "  /*à     Cookie: mstshash=Administr" HTTPStatus.BAD_REQUEST -
+147.78.47.57 - - [09/May/2022 09:22:30] code 400, message Bad request version ('¼\x14')
+147.78.47.57 - - [09/May/2022 09:22:30] "  üG<eñ0Ô61#j,u±âTÂqÄtVÊ¾L×­ ¨ð 91z´Êiâù!ôù¤g¤n39êQS¼" HTTPStatus.BAD_REQUEST -
+183.136.225.9 - - [09/May/2022 11:32:28] code 400, message Bad request syntax ('4')
+183.136.225.9 - - [09/May/2022 11:32:28] "4" HTTPStatus.BAD_REQUEST -
+192.241.212.140 - - [09/May/2022 11:56:45] "GET / HTTP/1.1" 200 -
+89.248.165.24 - - [09/May/2022 12:41:54] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+89.248.165.24 - - [09/May/2022 12:41:54] "  /*à     Cookie: mstshash=Administr" HTTPStatus.BAD_REQUEST -
+62.233.50.179 - - [09/May/2022 14:30:32] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+62.233.50.179 - - [09/May/2022 14:30:32] "  /*à     Cookie: mstshash=Administr" HTTPStatus.BAD_REQUEST -
+167.94.138.117 - - [09/May/2022 15:14:30] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00î\x01\x00\x00ê\x03\x03wßAàø=c,gæ\\ù\x96»ù\x18ÉßH²,gG\x0fôÑ¥!\x9dJ\x1bö')
+167.94.138.117 - - [09/May/2022 15:14:30] " î  êwßAàø=c,gæ\ù»ùÉßH²,gGôÑ¥!Jö Q¬-C " HTTPStatus.BAD_REQUEST -
+167.94.138.117 - - [09/May/2022 15:14:31] "GET / HTTP/1.1" 200 -
+167.94.138.117 - - [09/May/2022 15:14:32] "GET / HTTP/1.1" 200 -
+167.94.138.117 - - [09/May/2022 15:14:32] code 505, message Invalid HTTP version (2.0)
+167.94.138.117 - - [09/May/2022 15:14:32] "PRI * HTTP/2.0" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
+200.68.186.173 - - [09/May/2022 19:54:59] "GET / HTTP/1.1" 200 -
+200.68.186.173 - - [09/May/2022 19:54:59] "GET /swaggerui/swagger-ui.css HTTP/1.1" 304 -
+200.68.186.173 - - [09/May/2022 19:54:59] "GET /swaggerui/swagger-ui-bundle.js HTTP/1.1" 304 -
+200.68.186.173 - - [09/May/2022 19:54:59] "GET /swaggerui/droid-sans.css HTTP/1.1" 200 -
+200.68.186.173 - - [09/May/2022 19:54:59] "GET /swaggerui/swagger-ui-standalone-preset.js HTTP/1.1" 200 -
+198.235.24.132 - - [09/May/2022 20:20:18] "GET / HTTP/1.1" 200 -
+104.140.188.54 - - [09/May/2022 20:52:23] "GET / HTTP/1.1" 200 -
+192.241.214.15 - - [09/May/2022 21:07:03] code 400, message Bad request syntax ('MGLNDD_18.189.21.2_8888')
+192.241.214.15 - - [09/May/2022 21:07:03] "MGLNDD_18.189.21.2_8888" HTTPStatus.BAD_REQUEST -
+207.38.196.90 - - [09/May/2022 22:50:12] code 400, message Bad request syntax ('\x05\x01\x00')
+207.38.196.90 - - [09/May/2022 22:50:12] " " HTTPStatus.BAD_REQUEST -
+207.38.196.90 - - [09/May/2022 22:50:24] code 400, message Bad request syntax ('\x05\x01\x00')
+207.38.196.90 - - [09/May/2022 22:50:24] " " HTTPStatus.BAD_REQUEST -
+198.235.24.5 - - [09/May/2022 22:54:34] code 400, message Bad request version ('À(À$À\x14À')
+198.235.24.5 - - [09/May/2022 22:54:34] " Ê  Æm@åöÁ»À!2Ë©æÚIX-ò1~¨ÐÅ  hÌÌÀ/À+À0À,ÀÀÀ'À#ÀÀ	À(À$ÀÀ" HTTPStatus.BAD_REQUEST -
+198.235.24.155 - - [09/May/2022 23:51:32] "GET / HTTP/1.0" 200 -
+92.118.161.57 - - [10/May/2022 02:02:18] "GET / HTTP/1.0" 200 -
+200.56.74.253 - - [10/May/2022 04:51:52] "GET / HTTP/1.1" 200 -
+116.121.80.242 - - [10/May/2022 05:30:46] code 400, message Bad request syntax ('\x00\x00\x007And')
+116.121.80.242 - - [10/May/2022 05:30:46] "   7And" HTTPStatus.BAD_REQUEST -
+116.121.80.242 - - [10/May/2022 05:31:17] code 400, message Bad request syntax ('\x00\x00\x000dvr-video\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00')
+116.121.80.242 - - [10/May/2022 05:31:17] "   0dvr-video                    " HTTPStatus.BAD_REQUEST -
+162.142.125.7 - - [10/May/2022 10:26:03] code 400, message Bad request version ('À\x14À')
+162.142.125.7 - - [10/May/2022 10:26:03] " î  êýU6RÓ¸#=KÁIÝóa)Èx¶ÈU]T'ìcD êwÓkÉ¬âõÍK|7±µMsð%ö@ = &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ" HTTPStatus.BAD_REQUEST -
+162.142.125.7 - - [10/May/2022 10:26:04] "GET / HTTP/1.1" 200 -
+162.142.125.7 - - [10/May/2022 10:26:04] "GET / HTTP/1.1" 200 -
+162.142.125.7 - - [10/May/2022 10:26:04] code 505, message Invalid HTTP version (2.0)
+162.142.125.7 - - [10/May/2022 10:26:04] "PRI * HTTP/2.0" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
+192.241.214.26 - - [10/May/2022 14:37:59] "GET / HTTP/1.1" 200 -
+89.248.163.139 - - [10/May/2022 17:23:25] code 400, message Bad request syntax ('\x03\x00\x00\x13\x0eà\x00\x00\x00\x00\x00\x01\x00\x08\x00\x02\x00\x00\x00')
+89.248.163.139 - - [10/May/2022 17:23:25] "  à          " HTTPStatus.BAD_REQUEST -
+162.142.125.213 - - [10/May/2022 18:17:46] code 400, message Bad request version ('À\x14À')
+162.142.125.213 - - [10/May/2022 18:17:46] " î  êáiùCëY?ãÚþ	/Ê[4)ËÔO-W áV æ7i/ØØä]&zéIÝÅH&úX`<­Ô5¸} &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ" HTTPStatus.BAD_REQUEST -
+162.142.125.213 - - [10/May/2022 18:17:47] "GET / HTTP/1.1" 200 -
+162.142.125.213 - - [10/May/2022 18:17:47] "GET / HTTP/1.1" 200 -
+162.142.125.213 - - [10/May/2022 18:17:47] code 505, message Invalid HTTP version (2.0)
+162.142.125.213 - - [10/May/2022 18:17:47] "PRI * HTTP/2.0" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
+162.142.125.213 - - [10/May/2022 22:39:32] code 400, message Bad request version ('À\x14À')
+162.142.125.213 - - [10/May/2022 22:39:32] " î  êåþzÖVm$ß'é©¶Þ'ÝÝÑTvf#äw"4 sm£Ø]r²//rµÕúfC)?	IÃ, &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ" HTTPStatus.BAD_REQUEST -
+162.142.125.213 - - [10/May/2022 22:39:33] "GET / HTTP/1.1" 200 -
+162.142.125.213 - - [10/May/2022 22:39:33] "GET / HTTP/1.1" 200 -
+162.142.125.213 - - [10/May/2022 22:39:33] code 505, message Invalid HTTP version (2.0)
+162.142.125.213 - - [10/May/2022 22:39:33] "PRI * HTTP/2.0" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
+192.241.220.233 - - [11/May/2022 03:26:10] code 400, message Bad request syntax ('MGLNDD_18.189.21.2_8888')
+192.241.220.233 - - [11/May/2022 03:26:10] "MGLNDD_18.189.21.2_8888" HTTPStatus.BAD_REQUEST -
+198.235.24.136 - - [11/May/2022 03:47:39] "GET / HTTP/1.0" 200 -
+198.235.24.134 - - [11/May/2022 04:02:48] code 400, message Bad request syntax ('\x16\x03\x01\x00Ê\x01\x00\x00Æ\x03\x03{ÉÞ\x9d}`')
+198.235.24.134 - - [11/May/2022 04:02:48] " Ê  Æ{ÉÞ}`" HTTPStatus.BAD_REQUEST -
+205.210.31.29 - - [11/May/2022 06:09:52] "GET / HTTP/1.1" 200 -
+205.210.31.21 - - [11/May/2022 07:30:58] code 400, message Bad request version ('À(À$À\x14À')
+205.210.31.21 - - [11/May/2022 07:30:58] " Ê  ÆOZkP&\o+ßøï÷Ö¡ùX°JÆ±äÞA·	è  hÌÌÀ/À+À0À,ÀÀÀ'À#ÀÀ	À(À$ÀÀ" HTTPStatus.BAD_REQUEST -
+167.94.138.117 - - [11/May/2022 10:23:00] code 400, message Bad request version ('À\x14À')
+167.94.138.117 - - [11/May/2022 10:23:00] " î  êãÒ¥¶µRlLe×ä,Ï'gÖQÝöÐ ¢îÐKbm,JHsÞô­&î"B~ñ#áYõm³ø &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ" HTTPStatus.BAD_REQUEST -
+167.94.138.117 - - [11/May/2022 10:23:01] "GET / HTTP/1.1" 200 -
+167.94.138.117 - - [11/May/2022 10:23:01] "GET / HTTP/1.1" 200 -
+167.94.138.117 - - [11/May/2022 10:23:01] code 505, message Invalid HTTP version (2.0)
+167.94.138.117 - - [11/May/2022 10:23:01] "PRI * HTTP/2.0" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
+23.129.64.145 - - [11/May/2022 13:38:54] "GET / HTTP/1.1" 200 -
+205.185.122.29 - - [11/May/2022 13:38:56] "GET /favicon.ico HTTP/1.1" 404 -
+193.118.53.202 - - [11/May/2022 16:58:05] "GET /admin/ HTTP/1.1" 404 -
+205.210.31.134 - - [11/May/2022 18:51:39] code 400, message Bad request syntax ('\x16\x03\x01\x00Ê\x01\x00\x00Æ\x03\x03P\x93w\x02ågr6\x83\x01Ìö½:\x80Ù')
+205.210.31.134 - - [11/May/2022 18:51:39] " Ê  ÆPwågr6Ìö½:Ù" HTTPStatus.BAD_REQUEST -
+192.241.222.233 - - [11/May/2022 19:14:37] "GET / HTTP/1.1" 200 -
+185.124.240.164 - - [11/May/2022 20:47:28] "GET http://dyn.epicgifs.net/test6956.php HTTP/1.1" 404 -
+89.248.165.24 - - [11/May/2022 21:36:15] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+89.248.165.24 - - [11/May/2022 21:36:15] "  /*à     Cookie: mstshash=Administr" HTTPStatus.BAD_REQUEST -
+167.99.37.152 - - [11/May/2022 23:25:21] "HEAD / HTTP/1.0" 200 -
+167.99.37.152 - - [11/May/2022 23:25:22] "GET /system_api.php HTTP/1.1" 404 -
+167.99.37.152 - - [11/May/2022 23:25:22] "GET /c/version.js HTTP/1.1" 404 -
+167.99.37.152 - - [11/May/2022 23:25:22] "GET /streaming/clients_live.php HTTP/1.1" 404 -
+167.99.37.152 - - [11/May/2022 23:25:22] "GET /stalker_portal/c/version.js HTTP/1.1" 404 -
+167.99.37.152 - - [11/May/2022 23:25:23] "GET /stream/live.php HTTP/1.1" 404 -
+167.99.37.152 - - [11/May/2022 23:25:23] "GET /flu/403.html HTTP/1.1" 404 -
+167.99.37.152 - - [11/May/2022 23:25:23] "GET / HTTP/1.1" 200 -
+31.44.185.235 - - [11/May/2022 23:25:34] "GET /../../../mnt/mtd/Config/Account1 HTTP/1.1" 404 -
+80.82.70.228 - - [11/May/2022 23:38:21] code 400, message Bad request version ("¯nãY»bhlÿ(=':©\x82ÙoÈ¢×\x93\x98´ï\x80å¹\x90\x00(À")
+80.82.70.228 - - [11/May/2022 23:38:21] "o kRHÅ#÷:Nßâ´/ÿ	T§Äy°hÆ¤="á ´,¯nãY»bhlÿ(=':©ÙoÈ¢×´ïå¹ (À" HTTPStatus.BAD_REQUEST -
+162.142.125.10 - - [12/May/2022 00:28:18] code 400, message Bad request version ('À\x14À')
+162.142.125.10 - - [12/May/2022 00:28:18] " î  ê]L#:¼Æ°¶& ´àµi>´6{\qa`6(h¦ ·}ë:]í¾á0ôÔZÁhº«eM²`V¬?9ø¤Ý &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ" HTTPStatus.BAD_REQUEST -
+162.142.125.10 - - [12/May/2022 00:28:19] "GET / HTTP/1.1" 200 -
+162.142.125.10 - - [12/May/2022 00:28:19] "GET / HTTP/1.1" 200 -
+162.142.125.10 - - [12/May/2022 00:28:19] code 505, message Invalid HTTP version (2.0)
+162.142.125.10 - - [12/May/2022 00:28:19] "PRI * HTTP/2.0" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
+192.241.222.84 - - [12/May/2022 00:34:51] "GET / HTTP/1.1" 200 -
+205.210.31.33 - - [12/May/2022 00:52:39] "GET / HTTP/1.0" 200 -
+192.241.200.29 - - [12/May/2022 03:54:12] code 400, message Bad request syntax ('MGLNDD_18.189.21.2_8888')
+192.241.200.29 - - [12/May/2022 03:54:12] "MGLNDD_18.189.21.2_8888" HTTPStatus.BAD_REQUEST -
+205.210.31.156 - - [12/May/2022 05:41:00] "GET / HTTP/1.1" 200 -
+162.142.125.213 - - [12/May/2022 06:46:37] code 400, message Bad request version ('0\x19X\x99Ï')
+162.142.125.213 - - [12/May/2022 06:46:37] " î  êHå	#ïrº²,´x})f&þsàÓ X¡ |®¹i¨hÕ<  T²0XÏ" HTTPStatus.BAD_REQUEST -
+162.142.125.213 - - [12/May/2022 06:46:38] "GET / HTTP/1.1" 200 -
+162.142.125.213 - - [12/May/2022 06:46:38] "GET / HTTP/1.1" 200 -
+162.142.125.213 - - [12/May/2022 06:46:38] code 505, message Invalid HTTP version (2.0)
+162.142.125.213 - - [12/May/2022 06:46:38] "PRI * HTTP/2.0" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
+143.198.36.118 - - [12/May/2022 12:12:59] code 400, message Bad request syntax ('\x05\x01\x00')
+143.198.36.118 - - [12/May/2022 12:12:59] " " HTTPStatus.BAD_REQUEST -
+91.191.209.206 - - [12/May/2022 12:55:28] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+91.191.209.206 - - [12/May/2022 12:55:28] "  /*à     Cookie: mstshash=Administr" HTTPStatus.BAD_REQUEST -
+192.241.206.98 - - [12/May/2022 19:15:42] "GET / HTTP/1.1" 200 -
+183.136.225.42 - - [12/May/2022 20:39:37] "GET / HTTP/1.1" 200 -
+183.136.225.42 - - [12/May/2022 20:40:30] "GET / HTTP/1.1" 200 -
+183.136.225.42 - - [12/May/2022 20:40:30] "GET /swaggerui/favicon-32x32.png HTTP/1.1" 200 -
+162.142.125.222 - - [12/May/2022 21:04:36] code 400, message Bad request version ('À\x14À')
+162.142.125.222 - - [12/May/2022 21:04:36] " î  ê©D0ÒJ|üI:ýôAÃ~ÕÏàå,ü¥ðH¶ ËñÐÝ 5@ÉËÿ2Á¬£RèÀ»ñ¼ÑLmQ÷ì &Ì¨Ì©À/À0À+À,ÀÀ	ÀÀ" HTTPStatus.BAD_REQUEST -
+162.142.125.222 - - [12/May/2022 21:04:37] "GET / HTTP/1.1" 200 -
+162.142.125.222 - - [12/May/2022 21:04:37] "GET / HTTP/1.1" 200 -
+162.142.125.222 - - [12/May/2022 21:04:37] code 505, message Invalid HTTP version (2.0)
+162.142.125.222 - - [12/May/2022 21:04:37] "PRI * HTTP/2.0" HTTPStatus.HTTP_VERSION_NOT_SUPPORTED -
